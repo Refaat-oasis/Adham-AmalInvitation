@@ -569,6 +569,7 @@
          ================================================================= -->
     <div id="openGatesButton" onclick="openHeavenDoors()" role="button" tabindex="0"
          aria-label="اضغط لطرق الباب وفتح الدعوة"
+         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openHeavenDoors();}"
          class="center-knocker-wrapper knocker-idle absolute top-[55%] sm:top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center justify-center cursor-pointer group select-none focus:outline-none">
 
       <!-- Sound Shockwave Ripples when the Knocker Strikes -->
