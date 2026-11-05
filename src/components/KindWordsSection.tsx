@@ -11,26 +11,7 @@ interface KindWordsSectionProps {
   brideNameEn?: string;
 }
 
-const INITIAL_FALLBACK_MESSAGES: GuestMessage[] = [
-  {
-    id: 1,
-    invitationId: 1,
-    guestName: 'الأهل والأحباب',
-    attendanceStatus: 'سأتشرف بالحضور يوم الإثنين ٨ مساءً ✨',
-    message: 'بارك الله لكما وبارك عليكما وجمع بينكما في خير.. نلقاكم على خير يوم الإثنين الساعة ٨ مساءً في قاعة جراند ستار 2',
-    isApproved: true,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 2,
-    invitationId: 1,
-    guestName: 'أصدقاء العروسين بأسيوط',
-    attendanceStatus: 'سأتشرف بالحضور يوم الإثنين ٨ مساءً ✨',
-    message: 'ألف مبروك لأغلى عروسين أدهم و أمل! ربنا يتمم فرحتكم على خير ويجعل أيامكم كلها سعادة',
-    isApproved: true,
-    createdAt: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
-  },
-];
+const INITIAL_FALLBACK_MESSAGES: GuestMessage[] = [];
 
 export const KindWordsSection: React.FC<KindWordsSectionProps> = ({
   slug = 'adham-amal',

@@ -1233,24 +1233,8 @@
           <!-- Live Wishes Feed -->
           <div class="md:col-span-6 flex flex-col justify-between">
             <div id="wishesWall" class="space-y-3 max-h-72 overflow-y-auto pl-1 text-right">
-              <div class="p-4 rounded-2xl bg-slate-950/85 border border-amber-400/30">
-                <div class="flex items-center justify-between text-xs font-ui-ar text-amber-300">
-                  <span class="font-bold">الأهل والأحباب</span>
-                  <span>سأحضر بإذن الله ✨</span>
-                </div>
-                <p class="font-arabic text-amber-100 text-lg mt-1.5">
-                  «بارك الله لكما وبارك عليكما وجمع بينكما في خير.. نلقاكم على خير يوم الإثنين الساعة ٨ مساءً في قاعة جراند ستار 2»
-                </p>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-slate-950/85 border border-amber-400/30">
-                <div class="flex items-center justify-between text-xs font-ui-ar text-amber-300">
-                  <span class="font-bold">أصدقاء العروسين بأسيوط</span>
-                  <span>سأحضر بإذن الله ✨</span>
-                </div>
-                <p class="font-arabic text-amber-100 text-lg mt-1.5">
-                  «ألف مبروك لأغلى عروسين أدهم و أمل! ربنا يتمم فرحتكم على خير ويجعل أيامكم كلها سعادة»
-                </p>
+              <div id="emptyWishesPlaceholder" class="text-center py-12 text-amber-200/60 font-ui-ar text-xs">
+                لا توجد تهاني مسجلة بعد، كن أول المهنئين للعروسين ✨
               </div>
             </div>
           </div>
@@ -2547,6 +2531,8 @@
 
       card.appendChild(header);
       card.appendChild(bodyP);
+      const emptyPlaceholder = document.getElementById('emptyWishesPlaceholder');
+      if (emptyPlaceholder) emptyPlaceholder.remove();
       wall.prepend(card);
 
       nameInput.value = '';
