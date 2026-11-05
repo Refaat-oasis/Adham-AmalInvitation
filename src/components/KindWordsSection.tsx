@@ -136,7 +136,7 @@ export const KindWordsSection: React.FC<KindWordsSectionProps> = ({
 
   return (
     <section id="rsvpSection" className="py-6 sm:py-10">
-      <div className="celestial-card rounded-3xl p-5 sm:p-10 md:p-12">
+      <div className="celestial-card side-from-right rounded-3xl p-5 sm:p-10 md:p-12">
         <div className="text-center max-w-xl mx-auto mb-8">
           <span className="text-xs font-ui-ar text-amber-300/85 block">سجل التهاني والمباركات</span>
           <h2 className="font-arabic text-2xl sm:text-4xl font-bold text-amber-100 mt-1">
@@ -152,7 +152,7 @@ export const KindWordsSection: React.FC<KindWordsSectionProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Wishes Form */}
-          <form onSubmit={handleSubmit} className="md:col-span-6 space-y-4 font-ui-ar text-right">
+          <form onSubmit={handleSubmit} className="md:col-span-6 space-y-4 font-ui-ar text-right side-from-left">
             <div>
               <div className="flex justify-between items-center mb-1">
                 <label className="text-xs text-amber-200/90 font-semibold">الاسم الكريم</label>
@@ -227,7 +227,7 @@ export const KindWordsSection: React.FC<KindWordsSectionProps> = ({
           </form>
 
           {/* Live Wishes Feed */}
-          <div className="md:col-span-6 flex flex-col justify-between">
+          <div className="md:col-span-6 flex flex-col justify-between side-from-right">
             <div id="wishesWall" className="space-y-3 max-h-80 overflow-y-auto pl-1 text-right">
               {isLoading && messages.length === 0 ? (
                 <div className="text-center py-12 text-amber-200/70 font-ui-ar text-xs flex flex-col items-center gap-2">

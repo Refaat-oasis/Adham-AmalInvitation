@@ -34,8 +34,8 @@ function formatArabicTargetDate(dateObj: Date): string {
   }
 }
 
-export const CountdownSection: React.FC<CountdownSectionProps> = ({ initialDate, onToast }) => {
-  const [targetDate, setTargetDate] = useState<Date>(() => {
+export const CountdownSection: React.FC<CountdownSectionProps> = ({ initialDate }) => {
+  const [targetDate] = useState<Date>(() => {
     if (initialDate) {
       const parsed = new Date(initialDate);
       if (!isNaN(parsed.getTime())) return parsed;
@@ -43,8 +43,6 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({ initialDate,
     return getNextMondayAt8PM();
   });
 
-  const [showAdjuster, setShowAdjuster] = useState(false);
-  const [customInput, setCustomInput] = useState('');
   const [timeLeft, setTimeLeft] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00', isOver: false });
 
   useEffect(() => {
@@ -76,30 +74,9 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({ initialDate,
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  const handleApplyCustomDate = () => {
-    if (!customInput) {
-      onToast('يرجى اختيار التاريخ أولاً');
-      return;
-    }
-    const newDate = new Date(customInput);
-    if (isNaN(newDate.getTime())) {
-      onToast('تاريخ غير صالح');
-      return;
-    }
-    setTargetDate(newDate);
-    setShowAdjuster(false);
-    onToast('تم تحديث موعد العد التنازلي بنجاح');
-  };
-
-  const handleResetToMonday = () => {
-    setTargetDate(getNextMondayAt8PM());
-    setShowAdjuster(false);
-    onToast('تم ضبط العداد على يوم الإثنين القادم الساعة ٨:٠٠ مساءً');
-  };
-
   return (
     <section id="countdownSection" className="py-6 sm:py-10">
-      <div className="celestial-card rounded-3xl p-5 sm:p-10 md:p-12 text-center relative overflow-hidden">
+      <div className="celestial-card side-from-right rounded-3xl p-5 sm:p-10 md:p-12 text-center relative overflow-hidden">
         <span className="text-xs font-ui-ar text-amber-300/85 block mb-1">العد التنازلي لليلة العمر</span>
         <h2 className="font-arabic text-2xl sm:text-4xl font-bold text-amber-100">
           موعدنا يوم الإثنين القادم • الساعة ٨:٠٠ مساءً
@@ -112,48 +89,8 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({ initialDate,
           الموعد المضبوط: <span id="targetDateLabel">{formatArabicTargetDate(targetDate)}</span>
         </p>
 
-        {/* Date Adjuster Toggle */}
-        <div className="mt-3">
-          <button
-            type="button"
-            onClick={() => setShowAdjuster(!showAdjuster)}
-            className="text-xs font-ui-ar text-amber-300/75 hover:text-amber-200 underline cursor-pointer"
-          >
-            {showAdjuster ? 'إخفاء ضبط الموعد' : '⚙ تخصيص تاريخ الزفاف'}
-          </button>
-        </div>
-
-        {/* Collapsible Adjuster Box */}
-        {showAdjuster && (
-          <div className="mt-4 mb-6 p-4 rounded-2xl bg-slate-900/95 border border-amber-400/40 text-right font-ui-ar text-xs sm:text-sm max-w-md mx-auto">
-            <p className="text-amber-200 font-bold mb-2">تعديل موعد حفل الزفاف:</p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="datetime-local"
-                value={customInput}
-                onChange={(e) => setCustomInput(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-amber-400/50 text-amber-100 text-xs focus:outline-none focus:border-amber-400"
-              />
-              <button
-                type="button"
-                onClick={handleApplyCustomDate}
-                className="px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition text-xs shrink-0"
-              >
-                تطبيق
-              </button>
-              <button
-                type="button"
-                onClick={handleResetToMonday}
-                className="px-3 py-2 rounded-xl bg-slate-800 text-amber-200 hover:bg-slate-700 transition text-xs shrink-0"
-              >
-                إعادة ضبط
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* 4 Counter Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-2xl mx-auto mt-6" dir="ltr">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-2xl mx-auto mt-6 side-from-left" dir="ltr">
           <div className="p-4 sm:p-6 rounded-2xl bg-slate-950/80 border border-amber-400/35 shadow-inner">
             <div className="gold-foil-text text-3xl sm:text-6xl font-bold font-ui-ar tracking-tight">
               {timeLeft.days}

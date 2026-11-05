@@ -779,7 +779,7 @@ export const SketchSection: React.FC = () => {
 
   return (
     <section id="sketchSection" className="py-6 sm:py-10">
-      <div className="celestial-card rounded-3xl p-4 sm:p-8 md:p-12">
+      <div className="celestial-card side-from-right rounded-3xl p-4 sm:p-8 md:p-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 text-center md:text-right">
           <div>
             <span className="text-xs font-ui-ar text-amber-300/85 block">لوحة فنية بتظليل ليلي مذهب</span>
@@ -799,7 +799,7 @@ export const SketchSection: React.FC = () => {
         {/* GOLDEN NIGHT SHADED ARCHITECTURAL SKETCH CANVAS */}
         <div
           id="venueSketchFrame"
-          className="sketch-night-paper rounded-2xl p-2 sm:p-5 relative overflow-hidden transition-all duration-500"
+          className="sketch-night-paper side-from-left rounded-2xl p-2 sm:p-5 relative overflow-hidden transition-all duration-500"
         >
           <div className="border border-amber-400/35 rounded-xl p-1.5 sm:p-3 relative bg-[#070c18]/90">
             <canvas

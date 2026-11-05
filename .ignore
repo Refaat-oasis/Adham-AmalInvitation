@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing & Coverage
+coverage/
+
+# Subagent teamwork notes & logs
+.agents/
+
+# Local Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/

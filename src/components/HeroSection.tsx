@@ -17,9 +17,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <section id="heroSection" className="min-h-[80vh] flex flex-col items-center justify-center text-center py-6 sm:py-10 relative">
-      <div className="w-full max-w-3xl mx-auto celestial-card rounded-t-[130px] sm:rounded-t-[240px] rounded-b-3xl p-5 sm:p-10 md:p-14 border-2 border-amber-400/50 relative overflow-hidden">
+      <div className="w-full max-w-3xl mx-auto celestial-card side-from-left rounded-t-[130px] sm:rounded-t-[240px] rounded-b-3xl p-5 sm:p-10 md:p-14 border-2 border-amber-400/50 relative overflow-hidden">
         {/* Quranic Verse & Blessing */}
-        <div className="reveal-item delay-100">
+        <div className="reveal-item delay-100 side-from-right">
           <p className="font-arabic text-amber-300 text-lg sm:text-2xl mb-2 tracking-wide">
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>

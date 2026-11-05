@@ -223,7 +223,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
 
   return (
     <section id="gallerySection" className="py-6 sm:py-10">
-      <div className="celestial-card rounded-3xl p-5 sm:p-10 text-center relative overflow-hidden">
+      <div className="celestial-card side-from-left rounded-3xl p-5 sm:p-10 text-center relative overflow-hidden">
         <span className="text-xs font-ui-ar text-amber-300/90 block">خاتم الذكريات المتحرك</span>
         <h2 className="font-arabic text-2xl sm:text-4xl font-bold text-amber-100 mt-1">
           ألبوم صور العروسين{' '}
@@ -231,13 +231,10 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
             {groomNameEn} &amp; {brideNameEn}
           </span>
         </h2>
-        <p className="font-arabic text-sm sm:text-lg text-amber-200/80 mt-1">
-          اضغط على أي صورة لعرضها بالحجم الكامل • اسحب يميناً أو يساراً للتنقل بين الصور ↔
-        </p>
 
         {/* 3D Golden Wedding Ring Stage (Supports Drag & Swipe Sliding) */}
         <div
-          className="wedding-ring-stage my-6 sm:my-8 flex items-center justify-center select-none cursor-grab active:cursor-grabbing touch-pan-y"
+          className="wedding-ring-stage side-from-right my-6 sm:my-8 flex items-center justify-center select-none cursor-grab active:cursor-grabbing touch-pan-y"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -402,9 +399,6 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
                   {activeModalPhoto.titleAr}
                 </p>
               )}
-              <span className="text-[11px] font-ui-ar text-amber-300/75 block mt-1">
-                الصورة كاملة بدون قص
-              </span>
 
               {/* Prominent Bottom Close Button */}
               <button

@@ -28,7 +28,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({
 
   return (
     <section id="locationSection" className="py-6 sm:py-10">
-      <div className="celestial-card rounded-3xl p-5 sm:p-10 md:p-12 relative overflow-hidden">
+      <div className="celestial-card side-from-left rounded-3xl p-5 sm:p-10 md:p-12 relative overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-ui-ar text-amber-300/85 block">عنوان وموقع القاعة بالتفصيل</span>
           <h2 className="font-arabic text-3xl sm:text-5xl font-bold text-amber-100 mt-1">
@@ -40,7 +40,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({
         </div>
 
         {/* Visual Route Flow Diagram */}
-        <div className="my-6 sm:my-8 p-4 sm:p-7 rounded-2xl bg-slate-950/85 border border-amber-400/35">
+        <div className="my-6 sm:my-8 p-4 sm:p-7 rounded-2xl bg-slate-950/85 border border-amber-400/35 side-from-right">
           <p className="text-xs sm:text-sm font-ui-ar text-amber-300 text-center mb-5 font-semibold">
             خط السير المباشر للقاعة (حوالي ١٨ دقيقة من وسط مدينة أسيوط)
           </p>

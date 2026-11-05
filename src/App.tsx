@@ -27,6 +27,28 @@ const AppContent: React.FC<{ onToast: (msg: string) => void }> = ({ onToast }) =
     });
   }, []);
 
+  useEffect(() => {
+    if (!isUnlocked) return;
+
+    // Side appearance animation observer for sections & cards
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('side-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    const animatedElements = document.querySelectorAll('.side-from-left, .side-from-right');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [isUnlocked]);
+
   const handleOpenDoors = () => {
     setIsUnlocked(true);
     startMusic();
@@ -49,8 +71,8 @@ const AppContent: React.FC<{ onToast: (msg: string) => void }> = ({ onToast }) =
 
   return (
     <div className="relative min-h-screen selection:bg-amber-500/30 selection:text-amber-200">
-      {/* Ambient Celestial Particles Canvas */}
-      <CelestialCanvas />
+      {/* Ambient Celestial Particles Canvas with Falling A Monograms */}
+      <CelestialCanvas isUnlocked={isUnlocked} />
 
       {/* 3D Heaven Doors Entrance Overlay */}
       <HeavenDoors
