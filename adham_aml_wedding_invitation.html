@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>دعوة زفاف أدهم و أمل | Adham & Aml — قاعة جراند ستار 2</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Calligraphic Script Italic, Classical Serif & Arabic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold-light: #fbe6a2;
+      --gold-mid: #d4af37;
+      --gold-deep: #99741c;
+      --ivory-bg: #fdfbf7;
+      --celestial-dark: #070b14;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Amiri', 'Cairo', serif;
+      background-color: #070b14;
+      color: #f8f5ee;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .font-ui-ar {
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .font-arabic {
+      font-family: 'Amiri', serif;
+    }
+
+    .font-ruqaa {
+      font-family: 'Aref Ruqaa', serif;
+    }
+
+    /* Calligraphic Script Italic (Default for Adham & Aml) */
+    .name-italic-script {
+      font-family: 'Great Vibes', 'Alex Brush', cursive;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+    }
+
+    .name-italic-royal {
+      font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .name-italic-editorial {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* Metallic Gold Foil Text */
+    .gold-foil-text {
+      background: linear-gradient(
+        120deg,
+        #c5962e 0%,
+        #fff3c4 25%,
+        #d4af37 50%,
+        #fff7d6 75%,
+        #aa7c18 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 6s linear infinite;
+      filter: drop-shadow(0 4px 18px rgba(212, 175, 55, 0.32));
+    }
+
+    @keyframes goldShimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* ==========================================================
+       3D HEAVENLY DOORS ENTRANCE OVERLAY (RTL & LTR SAFE)
+       ========================================================== */
+    .heaven-stage {
+      perspective: 2400px;
+      transform-style: preserve-3d;
+      direction: ltr; /* Keep left/right door geometry consistent across devices */
+    }
+
+    .door-panel {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 2.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.6s ease 1.1s;
+      will-change: transform, opacity;
+      background: linear-gradient(165deg, rgba(255, 252, 245, 0.98) 0%, rgba(245, 235, 212, 0.97) 55%, rgba(226, 206, 164, 0.99) 100%);
+      box-shadow: inset 0 0 70px rgba(212, 175, 55, 0.35), 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .door-left {
+      transform-origin: left center;
+      border-right: 3px solid #c59b27;
+    }
+
+    .door-right {
+      transform-origin: right center;
+      border-left: 3px solid #c59b27;
+    }
+
+    /* Opened State */
+    .gates-opened .door-left {
+      transform: rotateY(-112deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gates-opened .door-right {
+      transform: rotateY(112deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gates-opened .center-knocker-wrapper {
+      transform: translate(-50%, -50%) scale(1.25);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gates-opened .heaven-bloom {
+      animation: bloomFlashFade 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes bloomFlashFade {
+      0% { opacity: 0; transform: scale(0.8); }
+      35% { opacity: 0.55; transform: scale(1.5); }
+      100% { opacity: 0; transform: scale(2.1); visibility: hidden; }
+    }
+
+    .gates-opened .cloud-left {
+      transform: translateX(-120%) scale(1.15);
+      opacity: 0;
+    }
+
+    .gates-opened .cloud-right {
+      transform: translateX(120%) scale(1.15);
+      opacity: 0;
+    }
+
+    .heaven-bloom {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ==========================================================
+       ANTIQUE ROYAL DOOR KNOCKER & OLD DOORBELL ANIMATION
+       ========================================================== */
+    .center-knocker-wrapper {
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.65s ease;
+      perspective: 900px;
+    }
+
+    .knocker-hinge-arm {
+      transform-origin: 50% 24%;
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+
+    /* Idle gentle invitation sway */
+    .knocker-idle .knocker-hinge-arm {
+      animation: knockerIdleSwing 3.2s ease-in-out infinite;
+    }
+
+    @keyframes knockerIdleSwing {
+      0%, 100% { transform: rotateX(0deg) translateY(0); }
+      50% { transform: rotateX(18deg) translateY(-3px); }
+    }
+
+    /* Realistic 3-Knock Strike Animation when pressed */
+    .knocker-striking .knocker-hinge-arm {
+      animation: knockerStrikeAction 1.05s cubic-bezier(0.36, 0, 0.66, 1) forwards;
+    }
+
+    @keyframes knockerStrikeAction {
+      0%   { transform: rotateX(0deg) scale(1); }
+      14%  { transform: rotateX(52deg) translateY(-14px) scale(1.06); }
+      26%  { transform: rotateX(-6deg) translateY(2px) scale(0.98); } /* Knock 1 */
+      42%  { transform: rotateX(48deg) translateY(-12px) scale(1.05); }
+      54%  { transform: rotateX(-6deg) translateY(2px) scale(0.98); } /* Knock 2 */
+      72%  { transform: rotateX(56deg) translateY(-16px) scale(1.08); }
+      86%  { transform: rotateX(-8deg) translateY(3px) scale(0.97); } /* Knock 3 */
+      100% { transform: rotateX(0deg) scale(1); }
+    }
+
+    /* Bell Pull Cord Animation */
+    .knocker-striking .bell-pull-cord {
+      animation: cordPullBounce 1.05s ease-in-out;
+    }
+
+    @keyframes cordPullBounce {
+      0%, 100% { transform: translateY(0); }
+      20%, 50%, 80% { transform: translateY(8px); }
+      35%, 65% { transform: translateY(-3px); }
+    }
+
+    /* Shockwave Ripple on Knock Strike */
+    .knock-ripple {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.4);
+      pointer-events: none;
+    }
+
+    .knocker-striking .knock-ripple-1 {
+      animation: knockShockwave 0.45s ease-out 0.24s forwards;
+    }
+    .knocker-striking .knock-ripple-2 {
+      animation: knockShockwave 0.45s ease-out 0.52s forwards;
+    }
+    .knocker-striking .knock-ripple-3 {
+      animation: knockShockwave 0.55s ease-out 0.82s forwards;
+    }
+
+    @keyframes knockShockwave {
+      0% { opacity: 0.95; transform: translate(-50%, -50%) scale(0.45); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1.85); }
+    }
+
+    /* ==========================================================
+       3D GOLDEN WEDDING RING AUTOMATIC PHOTO SHUFFLE CAROUSEL
+       ========================================================== */
+    .wedding-ring-stage {
+      position: relative;
+      perspective: 1400px;
+      min-height: 450px;
+    }
+
+    @media (min-width: 640px) {
+      .wedding-ring-stage {
+        min-height: 520px;
+      }
+    }
+
+    /* Giant Rotating Golden Wedding Band Halo Behind Photos */
+    .golden-wedding-band-halo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 310px;
+      height: 310px;
+      transform: translate(-50%, -50%) rotateX(18deg);
+      border-radius: 9999px;
+      border: 10px solid rgba(212, 175, 55, 0.45);
+      box-shadow:
+        0 0 40px rgba(212, 175, 55, 0.35),
+        inset 0 0 35px rgba(212, 175, 55, 0.35),
+        0 0 0 3px rgba(255, 243, 196, 0.35);
+      pointer-events: none;
+      animation: ringHaloPulse 6s ease-in-out infinite;
+    }
+
+    @media (min-width: 640px) {
+      .golden-wedding-band-halo {
+        width: 460px;
+        height: 460px;
+        border-width: 14px;
+      }
+    }
+
+    @keyframes ringHaloPulse {
+      0%, 100% { transform: translate(-50%, -50%) rotateX(18deg) rotateZ(0deg) scale(1); }
+      50% { transform: translate(-50%, -50%) rotateX(14deg) rotateZ(6deg) scale(1.03); }
+    }
+
+    /* Individual Ring Photo Card Positions in the 3D Ring Orbit */
+    .ring-photo-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity, filter;
+      cursor: pointer;
+    }
+
+    /* Slot 0: Front Center Featured Wedding Ring Frame */
+    .ring-slot-0 {
+      transform: translate(-50%, -50%) translateZ(70px) scale(1);
+      z-index: 30;
+      opacity: 1;
+      filter: brightness(1.05) drop-shadow(0 22px 45px rgba(0, 0, 0, 0.85));
+    }
+
+    /* Slot 1: Right Side of the Ring */
+    .ring-slot-1 {
+      transform: translate(18%, -50%) translateZ(-40px) rotateY(-26deg) scale(0.74);
+      z-index: 20;
+      opacity: 0.72;
+      filter: brightness(0.75) sepia(0.15);
+    }
+
+    /* Slot 2: Back Top of the Ring */
+    .ring-slot-2 {
+      transform: translate(-50%, -62%) translateZ(-130px) scale(0.54);
+      z-index: 10;
+      opacity: 0.38;
+      filter: brightness(0.55) blur(1px);
+    }
+
+    /* Slot 3: Left Side of the Ring */
+    .ring-slot-3 {
+      transform: translate(-118%, -50%) translateZ(-40px) rotateY(26deg) scale(0.74);
+      z-index: 20;
+      opacity: 0.72;
+      filter: brightness(0.75) sepia(0.15);
+    }
+
+    /* Hidden Slot for extra photos in 3D orbit */
+    .ring-slot-hidden {
+      transform: translate(-50%, -62%) translateZ(-220px) scale(0.35);
+      z-index: 5;
+      opacity: 0;
+      pointer-events: none;
+      filter: brightness(0.3) blur(2px);
+    }
+
+    @media (min-width: 640px) {
+      .ring-slot-1 {
+        transform: translate(38%, -50%) translateZ(-35px) rotateY(-28deg) scale(0.78);
+      }
+      .ring-slot-3 {
+        transform: translate(-138%, -50%) translateZ(-35px) rotateY(28deg) scale(0.78);
+      }
+    }
+
+    /* ==========================================================
+       GOLDEN NIGHT SHADING VENUE SKETCH STYLES (تظليل ليلي مذهب)
+       ========================================================== */
+    .sketch-night-paper {
+      background: radial-gradient(circle at 50% 35%, #131d31 0%, #0a101d 70%, #050811 100%);
+      box-shadow:
+        inset 0 0 65px rgba(212, 175, 55, 0.18),
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        0 24px 55px rgba(0, 0, 0, 0.8);
+      border: 2px solid rgba(212, 175, 55, 0.55);
+      color: #f9eac3;
+    }
+
+    /* High-Contrast Dark & Gold Cards */
+    .celestial-card {
+      background: rgba(11, 15, 26, 0.95);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.78), inset 0 1px 0 rgba(255, 245, 200, 0.14);
+    }
+
+    /* Music Equalizer Bars Animation */
+    .eq-bar {
+      display: inline-block;
+      width: 2.5px;
+      background-color: #fbbf24;
+      border-radius: 2px;
+      animation: eqBounce 0.85s ease-in-out infinite alternate;
+    }
+    .eq-bar:nth-child(2) { animation-delay: 0.2s; }
+    .eq-bar:nth-child(3) { animation-delay: 0.4s; }
+    .eq-paused .eq-bar {
+      animation: none !important;
+      height: 4px !important;
+      opacity: 0.45;
+    }
+
+    @keyframes eqBounce {
+      0% { height: 4px; }
+      100% { height: 14px; }
+    }
+
+    /* Staggered Reveal Animations when Doors Open */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .invitation-unlocked .reveal-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-100 { transition-delay: 0.2s; }
+    .delay-200 { transition-delay: 0.4s; }
+    .delay-300 { transition-delay: 0.6s; }
+    .delay-400 { transition-delay: 0.8s; }
+  </style>
+</head>
+
+<body class="relative min-h-screen selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- =====================================================================
+       AMBIENT CELESTIAL SPARKLES BACKGROUND CANVAS
+       ===================================================================== -->
+  <canvas id="celestialCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- =====================================================================
+       FLOATING TOP BAR (RESPONSIVE ARABIC + PLAY/STOP MUSIC BUTTON)
+       ===================================================================== -->
+  <header id="topBar" class="fixed top-0 left-0 right-0 z-40 px-2.5 sm:px-4 py-2.5 transition-all duration-700 opacity-0 pointer-events-none -translate-y-4">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2 px-3 sm:px-5 py-2 rounded-2xl sm:rounded-full bg-slate-950/90 backdrop-blur-md border border-amber-400/40 shadow-2xl">
+      <!-- Couple Brand -->
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 flex items-center justify-center text-slate-950 font-bold text-xs shadow shrink-0">
+          A&amp;A
+        </span>
+        <div class="leading-tight">
+          <span class="name-italic-script text-amber-200 text-lg sm:text-xl block" dir="ltr">
+            Adham &amp; Aml
+          </span>
+        </div>
+      </div>
+
+      <!-- Navigation Links (Arabic) -->
+      <nav class="hidden lg:flex items-center gap-5 text-xs font-ui-ar font-semibold text-amber-100/90">
+        <a href="#heroSection" class="hover:text-amber-300 transition">العروسين</a>
+        <a href="#countdownSection" class="hover:text-amber-300 transition">العد التنازلي</a>
+        <a href="#gallerySection" class="hover:text-amber-300 transition">ألبوم الصور</a>
+        <a href="#sketchSection" class="hover:text-amber-300 transition">رسم القاعة</a>
+        <a href="#locationSection" class="hover:text-amber-300 transition">موقع الفرح</a>
+        <a href="#rsvpSection" class="hover:text-amber-300 transition">التهاني</a>
+      </nav>
+
+      <!-- Action Buttons: Play/Stop Music + Replay Heaven Doors -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- Play / Stop Music Button -->
+        <button id="musicToggleBtn" type="button" onclick="toggleWeddingMusic()"
+                class="px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-ui-ar font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-100 border border-amber-400/50 transition flex items-center gap-2 shadow">
+          <span id="musicEqIndicator" class="flex items-end gap-0.5 h-3.5 eq-paused">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </span>
+          <span id="musicBtnText">تشغيل الموسيقى</span>
+        </button>
+
+        <!-- Replay Heaven Doors Button -->
+        <button id="replayDoorsBtn" type="button" onclick="replayHeavenDoors()"
+                class="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-ui-ar font-medium bg-slate-900 hover:bg-slate-800 text-amber-200 border border-amber-400/35 transition flex items-center gap-1"
+                title="إغلاق وإعادة فتح أبواب السماء">
+          <svg class="w-3.5 h-3.5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+          <span class="hidden sm:inline">أبواب الدعوة</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       FLOATING BOTTOM-LEFT MUSIC BUTTON (EASY MOBILE ACCESS ANYTIME)
+       ===================================================================== -->
+  <button id="floatingMusicBtn" type="button" onclick="toggleWeddingMusic()"
+          class="fixed bottom-5 left-4 z-40 px-3.5 py-2.5 rounded-full bg-slate-950/95 border-2 border-amber-400/70 text-amber-200 shadow-2xl flex items-center gap-2 text-xs font-ui-ar font-bold hover:scale-105 transition opacity-0 pointer-events-none">
+    <svg id="floatingMusicPlayIcon" class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+    </svg>
+    <span id="floatingMusicLabel">إيقاف الموسيقى</span>
+  </button>
+
+  <!-- =====================================================================
+       SCENARIO 1 & 2: THE TWO HEAVEN DOORS WITH "ADHAM" & "AML" WRITTEN ON THEM
+       ===================================================================== -->
+  <div id="heavenGatesOverlay" class="heaven-stage fixed inset-0 z-50 flex items-center justify-center overflow-hidden select-none transition-opacity duration-500">
+    <!-- Celestial Backdrop behind the doors -->
+    <div id="heavenBackdrop" class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-amber-950/90 transition-opacity duration-700 pointer-events-none">
+      <div class="absolute inset-0 opacity-35" style="background: repeating-conic-gradient(from 0deg at 50% 45%, rgba(212, 175, 55, 0.18) 0deg, rgba(15, 23, 42, 0.05) 12deg, rgba(212, 175, 55, 0.18) 24deg);"></div>
+    </div>
+
+    <!-- Brief Shimmer on Open -->
+    <div id="heavenBloomGlow" class="heaven-bloom absolute w-72 h-72 rounded-full bg-gradient-to-r from-amber-300/35 via-amber-100/45 to-amber-300/35 opacity-0 blur-2xl z-30"></div>
+
+    <!-- LEFT HEAVEN DOOR ("Adham" written on the Left Door) -->
+    <div id="leftHeavenDoor" class="door-panel door-left z-20 flex flex-col justify-between p-2.5 sm:p-6 md:p-8 cursor-pointer" onclick="openHeavenDoors()">
+      <div class="w-full h-full border-2 border-amber-600/70 rounded-tl-[110px] sm:rounded-tl-[240px] rounded-bl-2xl p-2 sm:p-5 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-white/95 via-amber-50/85 to-amber-100/75 shadow-inner">
+        <!-- Ornate Wrought-Gold Filigree SVG -->
+        <svg class="w-full h-full text-amber-600/75" viewBox="0 0 300 700" fill="none" preserveAspectRatio="none">
+          <path d="M 15 685 L 15 240 Q 15 25 290 15" stroke="currentColor" stroke-width="3.2" />
+          <path d="M 28 675 L 28 245 Q 28 45 290 32" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" />
+          <line x1="70" y1="115" x2="70" y2="670" stroke="currentColor" stroke-width="2" />
+          <line x1="125" y1="68" x2="125" y2="670" stroke="currentColor" stroke-width="2" />
+          <line x1="180" y1="42" x2="180" y2="670" stroke="currentColor" stroke-width="2.5" />
+          <line x1="235" y1="28" x2="235" y2="670" stroke="currentColor" stroke-width="2" />
+          <path d="M 290 160 C 210 160, 160 210, 125 260 C 90 310, 45 310, 28 280" stroke="currentColor" stroke-width="2.5" fill="none" />
+          <path d="M 290 350 C 200 350, 160 300, 125 350 C 90 400, 50 390, 28 360" stroke="currentColor" stroke-width="2.5" fill="none" />
+          <path d="M 290 520 C 210 520, 175 480, 125 520 C 75 560, 45 540, 28 520" stroke="currentColor" stroke-width="2.5" fill="none" />
+          <circle cx="295" cy="350" r="85" stroke="currentColor" stroke-width="2" />
+          <circle cx="295" cy="350" r="115" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" />
+        </svg>
+
+        <!-- PROMINENT "Adham" CALLIGRAPHIC PLAQUE ON THE LEFT DOOR (VISIBLE ON ALL SCREENS) -->
+        <div class="absolute top-[16%] sm:top-[18%] left-2 right-2 sm:left-6 sm:right-6 flex justify-center pointer-events-none">
+          <div class="px-3 sm:px-6 py-2 sm:py-3 rounded-2xl bg-gradient-to-b from-amber-50/95 to-amber-100/95 border-2 border-amber-500/80 shadow-lg text-center">
+            <span class="block text-[10px] sm:text-xs font-ui-ar text-amber-800 font-semibold">العريس</span>
+            <span class="name-italic-script text-3xl sm:text-5xl md:text-6xl text-amber-950 block leading-none mt-0.5">
+              Adham
+            </span>
+            <span class="font-ruqaa text-xs sm:text-base text-amber-800 block mt-0.5">أدهم</span>
+          </div>
+        </div>
+
+        <!-- Bottom Left Door Ornamental Inscription -->
+        <div class="absolute bottom-6 left-2 right-2 sm:left-6 sm:right-6 text-center pointer-events-none">
+          <p class="font-arabic text-xs sm:text-base text-amber-900/90 font-bold">أهلاً بكم في ليلة العمر</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT HEAVEN DOOR ("Aml" written on the Right Door) -->
+    <div id="rightHeavenDoor" class="door-panel door-right z-20 flex flex-col justify-between p-2.5 sm:p-6 md:p-8 cursor-pointer" onclick="openHeavenDoors()">
+      <div class="w-full h-full border-2 border-amber-600/70 rounded-tr-[110px] sm:rounded-tr-[240px] rounded-br-2xl p-2 sm:p-5 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-white/95 via-amber-50/85 to-amber-100/75 shadow-inner">
+        <!-- Mirrored Ornate Wrought-Gold Filigree SVG -->
+        <svg class="w-full h-full text-amber-600/75" viewBox="0 0 300 700" fill="none" preserveAspectRatio="none">
+          <path d="M 285 685 L 285 240 Q 285 25 10 15" stroke="currentColor" stroke-width="3.2" />
+          <path d="M 272 675 L 272 245 Q 272 45 10 32" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" />
+          <line x1="230" y1="115" x2="230" y2="670" stroke="currentColor" stroke-width="2" />
+          <line x1="175" y1="68" x2="175" y2="670" stroke="currentColor" stroke-width="2" />
+          <line x1="120" y1="42" x2="120" y2="670" stroke="currentColor" stroke-width="2.5" />
+          <line x1="65" y1="28" x2="65" y2="670" stroke="currentColor" stroke-width="2" />
+          <path d="M 10 160 C 90 160, 140 210, 175 260 C 210 310, 255 310, 272 280" stroke="currentColor" stroke-width="2.5" fill="none" />
+          <path d="M 10 350 C 100 350, 140 300, 175 350 C 210 400, 250 390, 272 360" stroke="currentColor" stroke-width="2.5" fill="none" />
+          <path d="M 10 520 C 90 520, 125 480, 175 520 C 225 560, 255 540, 272 520" stroke="currentColor" stroke-width="2.5" fill="none" />
+          <circle cx="5" cy="350" r="85" stroke="currentColor" stroke-width="2" />
+          <circle cx="5" cy="350" r="115" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" />
+        </svg>
+
+        <!-- PROMINENT "Aml" CALLIGRAPHIC PLAQUE ON THE RIGHT DOOR (VISIBLE ON ALL SCREENS) -->
+        <div class="absolute top-[16%] sm:top-[18%] left-2 right-2 sm:left-6 sm:right-6 flex justify-center pointer-events-none">
+          <div class="px-3 sm:px-6 py-2 sm:py-3 rounded-2xl bg-gradient-to-b from-amber-50/95 to-amber-100/95 border-2 border-amber-500/80 shadow-lg text-center">
+            <span class="block text-[10px] sm:text-xs font-ui-ar text-amber-800 font-semibold">العروسة</span>
+            <span class="name-italic-script text-3xl sm:text-5xl md:text-6xl text-amber-950 block leading-none mt-0.5">
+              Aml
+            </span>
+            <span class="font-ruqaa text-xs sm:text-base text-amber-800 block mt-0.5">أمل</span>
+          </div>
+        </div>
+
+        <!-- Bottom Right Door Ornamental Inscription -->
+        <div class="absolute bottom-6 left-2 right-2 sm:left-6 sm:right-6 text-center pointer-events-none">
+          <p class="font-arabic text-xs sm:text-base text-amber-900/90 font-bold">دامت أفراحكم عامرة</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOFT HEAVENLY CLOUDS AT THE BASE OF THE GATES -->
+    <div class="cloud-layer cloud-left absolute -bottom-10 left-0 w-3/5 h-36 sm:h-44 z-25 pointer-events-none opacity-90"
+         style="background: radial-gradient(ellipse at 30% 80%, rgba(255,255,255,0.95) 0%, rgba(254,246,228,0.65) 50%, transparent 75%); filter: blur(12px);"></div>
+    <div class="cloud-layer cloud-right absolute -bottom-10 right-0 w-3/5 h-36 sm:h-44 z-25 pointer-events-none opacity-90"
+         style="background: radial-gradient(ellipse at 70% 80%, rgba(255,255,255,0.95) 0%, rgba(254,246,228,0.65) 50%, transparent 75%); filter: blur(12px);"></div>
+
+    <!-- =================================================================
+         ANTIQUE ROYAL GOLDEN DOOR KNOCKER & OLD DOORBELL (REPLACES STAMP)
+         ================================================================= -->
+    <div id="openGatesButton" onclick="openHeavenDoors()" role="button" tabindex="0"
+         aria-label="اضغط لطرق الباب وفتح الدعوة"
+         class="center-knocker-wrapper knocker-idle absolute top-[55%] sm:top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center justify-center cursor-pointer group select-none focus:outline-none">
+
+      <!-- Sound Shockwave Ripples when the Knocker Strikes -->
+      <div class="knock-ripple knock-ripple-1 absolute top-[48%] left-1/2 w-36 h-36 sm:w-48 sm:h-48 rounded-full border-4 border-amber-300 shadow-[0_0_35px_rgba(251,191,36,0.9)]"></div>
+      <div class="knock-ripple knock-ripple-2 absolute top-[48%] left-1/2 w-36 h-36 sm:w-48 sm:h-48 rounded-full border-4 border-amber-200 shadow-[0_0_40px_rgba(251,191,36,0.95)]"></div>
+      <div class="knock-ripple knock-ripple-3 absolute top-[48%] left-1/2 w-40 h-40 sm:w-56 sm:h-56 rounded-full border-4 border-white shadow-[0_0_50px_rgba(255,255,255,1)]"></div>
+
+      <!-- Sculpted Antique Brass & Gold Door Knocker + Bell Assembly -->
+      <div class="relative w-44 h-56 sm:w-56 sm:h-68 flex flex-col items-center justify-start">
+        <svg viewBox="0 0 220 270" class="w-full h-full drop-shadow-[0_18px_28px_rgba(0,0,0,0.65)] overflow-visible">
+          <defs>
+            <!-- Brushed Antique Gold Gradients -->
+            <linearGradient id="antiqueGoldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fff3c4" />
+              <stop offset="30%" stop-color="#eab308" />
+              <stop offset="65%" stop-color="#a16207" />
+              <stop offset="100%" stop-color="#fde047" />
+            </linearGradient>
+            <linearGradient id="knockerRingGold" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#fef9c3" />
+              <stop offset="40%" stop-color="#d97706" />
+              <stop offset="75%" stop-color="#78350f" />
+              <stop offset="100%" stop-color="#facc15" />
+            </linearGradient>
+            <radialGradient id="strikeAnvilGrad" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stop-color="#fef08a" />
+              <stop offset="60%" stop-color="#b45309" />
+              <stop offset="100%" stop-color="#451a03" />
+            </radialGradient>
+          </defs>
+
+          <!-- 1. Ornate Backplate Mounted on the Doors (Fixed) -->
+          <g>
+            <!-- Outer Baroque Backplate Shield -->
+            <path d="M 110 12 C 148 12, 174 42, 174 88 C 174 138, 152 184, 110 202 C 68 184, 46 138, 46 88 C 46 42, 72 12, 110 12 Z"
+                  fill="url(#antiqueGoldPlate)" stroke="#451a03" stroke-width="3" />
+            <path d="M 110 22 C 141 22, 162 48, 162 88 C 162 132, 143 172, 110 188 C 77 172, 58 132, 58 88 C 58 48, 79 22, 110 22 Z"
+                  fill="none" stroke="#fef08a" stroke-width="1.5" stroke-dasharray="5 3" />
+
+            <!-- Top Vintage Doorbell Dome & Clapper Crown -->
+            <path d="M 88 16 C 88 2, 132 2, 132 16 Z" fill="url(#knockerRingGold)" stroke="#451a03" stroke-width="2" />
+            <circle cx="110" cy="4" r="5" fill="#fef08a" stroke="#78350f" stroke-width="1.5" />
+
+            <!-- Mounting Screws -->
+            <circle cx="110" cy="32" r="4" fill="#78350f" stroke="#fef08a" stroke-width="1" />
+            <circle cx="68" cy="88" r="4" fill="#78350f" stroke="#fef08a" stroke-width="1" />
+            <circle cx="152" cy="88" r="4" fill="#78350f" stroke="#fef08a" stroke-width="1" />
+
+            <!-- Bottom Strike Anvil Stud (Where the Knocker Hits) -->
+            <circle cx="110" cy="162" r="18" fill="url(#strikeAnvilGrad)" stroke="#fef08a" stroke-width="2" />
+            <circle cx="110" cy="162" r="10" fill="#78350f" stroke="#fde047" stroke-width="1.2" />
+
+            <!-- Upper Hinge Mount Pivot -->
+            <rect x="86" y="48" width="48" height="24" rx="10" fill="url(#strikeAnvilGrad)" stroke="#fef08a" stroke-width="2" />
+            <circle cx="110" cy="60" r="8" fill="#fef08a" stroke="#78350f" stroke-width="2" />
+          </g>
+
+          <!-- 2. Vintage Side Bell Pull Chain (Bounces on Knock) -->
+          <g class="bell-pull-cord">
+            <line x1="166" y1="75" x2="166" y2="175" stroke="#fde047" stroke-width="2.5" stroke-dasharray="4 3" />
+            <path d="M 158 175 L 174 175 L 178 192 L 154 192 Z" fill="url(#knockerRingGold)" stroke="#451a03" stroke-width="1.8" />
+            <circle cx="166" cy="196" r="5" fill="#fef08a" stroke="#78350f" stroke-width="1.5" />
+          </g>
+
+          <!-- 3. ANIMATED HINGED HEAVY GOLDEN KNOCKER RING (Lifts & Knocks 3 Times!) -->
+          <g class="knocker-hinge-arm">
+            <!-- Drop Shadow of the Ring -->
+            <ellipse cx="110" cy="122" rx="46" ry="52" fill="none" stroke="rgba(0,0,0,0.38)" stroke-width="16" />
+            <!-- Main Heavy Sculpted Ring -->
+            <ellipse cx="110" cy="116" rx="46" ry="52" fill="none" stroke="url(#knockerRingGold)" stroke-width="15" />
+            <!-- Inner Highlight Rim of the Knocker Ring -->
+            <ellipse cx="110" cy="116" rx="46" ry="52" fill="none" stroke="#fef9c3" stroke-width="2.2" opacity="0.85" />
+            <!-- Decorative Filigree Bosses on Left, Right, and Bottom Striker Hammer -->
+            <circle cx="64" cy="116" r="10" fill="url(#strikeAnvilGrad)" stroke="#fef08a" stroke-width="1.8" />
+            <circle cx="156" cy="116" r="10" fill="url(#strikeAnvilGrad)" stroke="#fef08a" stroke-width="1.8" />
+            <!-- Heavy Bottom Hammer Head that strikes the anvil at y=162 -->
+            <rect x="92" y="154" width="36" height="20" rx="9" fill="url(#strikeAnvilGrad)" stroke="#fef9c3" stroke-width="2.2" />
+            <!-- Couple Initials Engraved on Hammer -->
+            <text x="110" y="168" text-anchor="middle" fill="#fef9c3" font-size="11" font-weight="bold" font-family="serif">A&amp;A</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MAIN INVITATION CONTENT (FULL ARABIC & RESPONSIVE)
+       ===================================================================== -->
+  <main id="invitationMain" class="relative z-10 pt-20 pb-24 px-3 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+
+    <!-- ===================================================================
+         SCENARIO 2 & 6: COUPLE NAMES IN CALLIGRAPHIC SCRIPT ITALIC
+         =================================================================== -->
+    <section id="heroSection" class="min-h-[80vh] flex flex-col items-center justify-center text-center py-6 sm:py-10 relative">
+      <div class="w-full max-w-3xl mx-auto celestial-card rounded-t-[130px] sm:rounded-t-[240px] rounded-b-3xl p-5 sm:p-10 md:p-14 border-2 border-amber-400/50 relative overflow-hidden">
+
+        <!-- Quranic Verse & Blessing -->
+        <div class="reveal-item delay-100">
+          <p class="font-arabic text-amber-300 text-lg sm:text-2xl mb-2 tracking-wide">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
+          <p class="font-arabic text-amber-100/95 text-sm sm:text-lg leading-relaxed max-w-xl mx-auto mb-4">
+            ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾
+          </p>
+          <div class="flex items-center justify-center gap-3 my-3">
+            <span class="h-px w-10 sm:w-20 bg-gradient-to-l from-transparent to-amber-400"></span>
+            <span class="text-amber-300 text-xs sm:text-sm font-ui-ar font-semibold tracking-wider">دعوة زفاف مباركة</span>
+            <span class="h-px w-10 sm:w-20 bg-gradient-to-r from-transparent to-amber-400"></span>
+          </div>
+        </div>
+
+        <!-- THE TWO NAMES LOCKED IN CALLIGRAPHIC SCRIPT ITALIC ("Adham" & "Aml") -->
+        <div class="reveal-item delay-200 my-4 sm:my-8 py-2 relative">
+          <!-- Name 1: Adham -->
+          <h1 id="groomNameDisplay" class="name-italic-script gold-foil-text text-6xl sm:text-8xl md:text-9xl leading-none select-all py-1" dir="ltr">
+            Adham
+          </h1>
+
+          <!-- Ornate Divider -->
+          <div class="flex items-center justify-center gap-3 sm:gap-4 my-1 sm:my-2" dir="ltr">
+            <svg class="w-14 sm:w-28 h-5 text-amber-400/60" viewBox="0 0 120 20" fill="none">
+              <path d="M0 10 C30 2, 60 18, 90 10 C105 6, 115 10, 120 10" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <span class="name-italic-script text-4xl sm:text-6xl text-amber-300 px-2 drop-shadow">
+              &amp;
+            </span>
+            <svg class="w-14 sm:w-28 h-5 text-amber-400/60 transform scale-x-[-1]" viewBox="0 0 120 20" fill="none">
+              <path d="M0 10 C30 2, 60 18, 90 10 C105 6, 115 10, 120 10" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+
+          <!-- Name 2: Aml -->
+          <h1 id="brideNameDisplay" class="name-italic-script gold-foil-text text-6xl sm:text-8xl md:text-9xl leading-none select-all py-1" dir="ltr">
+            Aml
+          </h1>
+
+          <!-- Arabic Calligraphic Names -->
+          <p class="font-ruqaa text-2xl sm:text-4xl text-amber-200 mt-3 tracking-wide">
+            أدهم <span class="text-amber-400 mx-2">♡</span> أمل
+          </p>
+
+          <!-- Lowercase Calligraphic Script Preview ("adham & aml") -->
+          <p class="name-italic-script text-amber-300/95 text-2xl sm:text-3xl mt-1" dir="ltr">
+            adham &amp; aml
+          </p>
+        </div>
+
+        <!-- Arabic Invitation Wording -->
+        <div class="reveal-item delay-300 max-w-xl mx-auto space-y-2.5 px-2">
+          <p class="font-arabic text-xl sm:text-2xl text-amber-100 leading-relaxed">
+            تتعالى الأصوات وتمتزج العبارات وتتحرك الأنامل لتخط كلمات الحب والفرح..
+            يتشرف <strong class="text-amber-300">أدهم</strong> و <strong class="text-amber-300">أمل</strong> بدعوتكم لحضور حفل زفافهما المبارك ومشاركتهما أجمل ليالي العمر
+          </p>
+        </div>
+
+        <!-- Quick Event Summary Badges in Arabic -->
+        <div class="reveal-item delay-400 mt-7 pt-7 border-t border-amber-500/25 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-center">
+          <div class="p-3.5 rounded-2xl bg-amber-500/5 border border-amber-400/25">
+            <p class="text-xs font-ui-ar text-amber-300/90">الموعد</p>
+            <p class="font-arabic text-xl sm:text-2xl font-bold text-amber-100 mt-0.5">يوم الإثنين • ٨:٠٠ مساءً</p>
+            <p class="text-xs font-ui-ar text-amber-200/75 mt-0.5">الساعة الثامنة مساءً</p>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-amber-500/15 border border-amber-400/45">
+            <p class="text-xs font-ui-ar text-amber-300/90">القاعة</p>
+            <p class="font-arabic text-xl sm:text-2xl font-bold text-amber-200 mt-0.5">قاعة جراند ستار 2</p>
+            <p class="text-xs font-ui-ar text-amber-200/85 mt-0.5" dir="ltr">Grand Star 2</p>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-amber-500/5 border border-amber-400/25">
+            <p class="text-xs font-ui-ar text-amber-300/90">المكان والطريق</p>
+            <p class="font-arabic text-xl sm:text-2xl font-bold text-amber-100 mt-0.5">طريق منقباد ← بني غالب</p>
+            <p class="text-xs font-ui-ar text-amber-200/75 mt-0.5">أسيوط — محافظة أسيوط</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENARIO 3: LIVE COUNTDOWN TO MONDAY 8:00 PM
+         =================================================================== -->
+    <section id="countdownSection" class="py-6 sm:py-10">
+      <div class="celestial-card rounded-3xl p-5 sm:p-10 text-center relative overflow-hidden">
+        <span class="text-xs font-ui-ar text-amber-300/90 block">العد التنازلي لليلة العمر</span>
+        <h2 class="font-arabic text-2xl sm:text-4xl font-bold text-amber-100 mt-1">
+          موعدنا يوم الإثنين • الساعة ٨:٠٠ مساءً
+        </h2>
+        <p id="targetDateLabel" class="text-xs sm:text-sm font-ui-ar text-amber-300 mt-1.5 font-semibold">
+          يوم الإثنين • ٨:٠٠ مساءً
+        </p>
+
+        <!-- 4 Countdown Cards (Days, Hours, Minutes, Seconds) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 max-w-2xl mx-auto my-6 sm:my-8" dir="ltr">
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/90 border border-amber-400/45 shadow-lg">
+            <span id="cd-days" class="block text-3xl sm:text-5xl font-bold gold-foil-text font-mono">00</span>
+            <span class="block text-xs sm:text-sm font-ui-ar text-amber-200/90 mt-1">يوم</span>
+          </div>
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/90 border border-amber-400/45 shadow-lg">
+            <span id="cd-hours" class="block text-3xl sm:text-5xl font-bold gold-foil-text font-mono">00</span>
+            <span class="block text-xs sm:text-sm font-ui-ar text-amber-200/90 mt-1">ساعة</span>
+          </div>
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/90 border border-amber-400/45 shadow-lg">
+            <span id="cd-minutes" class="block text-3xl sm:text-5xl font-bold gold-foil-text font-mono">00</span>
+            <span class="block text-xs sm:text-sm font-ui-ar text-amber-200/90 mt-1">دقيقة</span>
+          </div>
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/90 border border-amber-400/45 shadow-lg">
+            <span id="cd-seconds" class="block text-3xl sm:text-5xl font-bold gold-foil-text font-mono">00</span>
+            <span class="block text-xs sm:text-sm font-ui-ar text-amber-200/90 mt-1">ثانية</span>
+          </div>
+        </div>
+
+        <p id="countdownStatusNote" class="font-arabic text-base sm:text-lg text-amber-200/90">
+          نعدّ الساعات والدقائق شوقاً للقائكم في قاعة جراند ستار 2
+        </p>
+
+        <!-- Optional Date Adjuster -->
+        <div class="mt-4">
+          <button type="button" onclick="toggleDateAdjuster()"
+                  class="text-xs font-ui-ar text-amber-300/80 hover:text-amber-200 underline">
+            تعديل تاريخ يوم الإثنين المحدد
+          </button>
+          <div id="dateAdjusterBox" class="hidden mt-3 p-3 rounded-2xl bg-slate-950/90 border border-amber-400/35 max-w-md mx-auto flex flex-wrap items-center justify-center gap-2">
+            <input id="customWeddingDateInput" type="datetime-local"
+                   class="px-3 py-1.5 rounded-lg bg-slate-900 text-amber-100 border border-amber-400/40 text-xs font-ui-ar" />
+            <button type="button" onclick="applyCustomDate()"
+                    class="px-3 py-1.5 rounded-lg bg-amber-400 text-slate-950 font-ui-ar font-bold text-xs">
+              تطبيق
+            </button>
+            <button type="button" onclick="resetToNextMonday()"
+                    class="px-3 py-1.5 rounded-lg bg-slate-800 text-amber-200 border border-amber-400/30 font-ui-ar text-xs">
+              الإثنين القادم ٨ مساءً
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         3D GOLDEN WEDDING RING AUTOMATIC PHOTO SHUFFLE CAROUSEL (ألبوم الصور)
+         =================================================================== -->
+    <section id="gallerySection" class="py-6 sm:py-10">
+      <div class="celestial-card rounded-3xl p-5 sm:p-10 text-center relative overflow-hidden">
+        <span class="text-xs font-ui-ar text-amber-300/90 block">خاتم الذكريات المتحرك</span>
+        <h2 class="font-arabic text-2xl sm:text-4xl font-bold text-amber-100 mt-1">
+          ألبوم صور العروسين <span class="name-italic-script text-amber-300 text-3xl sm:text-4xl mx-1" dir="ltr">Adham &amp; Aml</span>
+        </h2>
+        <p class="font-arabic text-sm sm:text-lg text-amber-200/80 mt-1">
+          اضغط على أي صورة لعرضها بالحجم الكامل • اسحب يميناً أو يساراً للتنقل بين الصور ↔
+        </p>
+
+        <!-- 3D Golden Wedding Ring Stage (Supports Drag & Swipe Sliding) -->
+        <div id="weddingRingStage"
+             class="wedding-ring-stage my-6 sm:my-8 flex items-center justify-center select-none cursor-grab active:cursor-grabbing touch-pan-y"
+             ontouchstart="handleRingTouchStart(event)"
+             ontouchmove="handleRingTouchMove(event)"
+             ontouchend="handleRingTouchEnd()"
+             onmousedown="handleRingMouseDown(event)"
+             onmousemove="handleRingMouseMove(event)"
+             onmouseup="handleRingMouseUp()"
+             onmouseleave="handleRingMouseLeave()">
+          <div class="golden-wedding-band-halo">
+            <!-- Diamond Solitaire Crest at the Top of the Wedding Band -->
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-11 h-11 flex items-center justify-center">
+              <svg viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_0_16px_rgba(255,255,255,0.95)]">
+                <polygon points="30,4 52,20 30,56 8,20" fill="#e0f2fe" stroke="#fef08a" stroke-width="2.5" />
+                <polygon points="30,4 42,20 30,56 18,20" fill="#bae6fd" opacity="0.75" />
+                <line x1="8" y1="20" x2="52" y2="20" stroke="#ffffff" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Ring Photo Card 0 -->
+          <div id="ringCard-0"
+               onclick="handleRingCardClick(0)"
+               onmouseenter="pauseRingHover(true)"
+               onmouseleave="pauseRingHover(false)"
+               class="ring-photo-item ring-slot-0 w-56 sm:w-68 rounded-full p-2.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 border-2 border-amber-100 shadow-2xl transition-all duration-700 group/card cursor-pointer">
+            <div class="relative w-52 h-52 sm:w-64 sm:h-64 mx-auto rounded-full overflow-hidden bg-slate-950 border-4 border-slate-950 group-hover/card:border-amber-300 transition-colors">
+              <img id="coupleImg-0"
+                   src="images/WhatsApp Image 2026-11-05 at 4.27.13 PM.jpeg"
+                   onerror="this.onerror=null; this.src='https://placehold.co/600x600/1e1b18/f6e09e?text=Adham+%26+Aml+1';"
+                   alt="Adham and Aml Photo 1"
+                   class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 text-center">
+                <p class="name-italic-script text-amber-200 text-xl" dir="ltr">Adham &amp; Aml</p>
+                <label onclick="event.stopPropagation()" class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-amber-400/90 text-slate-950 font-ui-ar font-bold text-[10px] cursor-pointer hover:bg-amber-300">
+                  تغيير الصورة
+                  <input type="file" accept="image/*" class="hidden" onchange="replaceGalleryPhoto(event, 0)" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ring Photo Card 1 -->
+          <div id="ringCard-1"
+               onclick="handleRingCardClick(1)"
+               onmouseenter="pauseRingHover(true)"
+               onmouseleave="pauseRingHover(false)"
+               class="ring-photo-item ring-slot-1 w-56 sm:w-68 rounded-full p-2.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 border-2 border-amber-100 shadow-2xl transition-all duration-700 group/card cursor-pointer">
+            <div class="relative w-52 h-52 sm:w-64 sm:h-64 mx-auto rounded-full overflow-hidden bg-slate-950 border-4 border-slate-950 group-hover/card:border-amber-300 transition-colors">
+              <img id="coupleImg-1"
+                   src="images/WhatsApp Image 2026-11-05 at 4.27.13 PM (1).jpeg"
+                   onerror="this.onerror=null; this.src='https://placehold.co/600x600/172030/fde68a?text=Adham+%26+Aml+2';"
+                   alt="Adham and Aml Photo 2"
+                   class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 text-center">
+                <p class="font-arabic text-amber-200 text-sm font-bold">فرحة العمر</p>
+                <label onclick="event.stopPropagation()" class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-amber-400/90 text-slate-950 font-ui-ar font-bold text-[10px] cursor-pointer hover:bg-amber-300">
+                  تغيير الصورة
+                  <input type="file" accept="image/*" class="hidden" onchange="replaceGalleryPhoto(event, 1)" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ring Photo Card 2 -->
+          <div id="ringCard-2"
+               onclick="handleRingCardClick(2)"
+               onmouseenter="pauseRingHover(true)"
+               onmouseleave="pauseRingHover(false)"
+               class="ring-photo-item ring-slot-2 w-56 sm:w-68 rounded-full p-2.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 border-2 border-amber-100 shadow-2xl transition-all duration-700 group/card cursor-pointer">
+            <div class="relative w-52 h-52 sm:w-64 sm:h-64 mx-auto rounded-full overflow-hidden bg-slate-950 border-4 border-slate-950 group-hover/card:border-amber-300 transition-colors">
+              <img id="coupleImg-2"
+                   src="images/WhatsApp Image 2026-11-05 at 4.27.14 PM.jpeg"
+                   onerror="this.onerror=null; this.src='https://placehold.co/600x600/241c15/fef08a?text=Adham+%26+Aml+3';"
+                   alt="Adham and Aml Photo 3"
+                   class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 text-center">
+                <p class="font-arabic text-amber-200 text-sm font-bold">أدهم ♡ أمل</p>
+                <label onclick="event.stopPropagation()" class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-amber-400/90 text-slate-950 font-ui-ar font-bold text-[10px] cursor-pointer hover:bg-amber-300">
+                  تغيير الصورة
+                  <input type="file" accept="image/*" class="hidden" onchange="replaceGalleryPhoto(event, 2)" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ring Photo Card 3 -->
+          <div id="ringCard-3"
+               onclick="handleRingCardClick(3)"
+               onmouseenter="pauseRingHover(true)"
+               onmouseleave="pauseRingHover(false)"
+               class="ring-photo-item ring-slot-hidden w-56 sm:w-68 rounded-full p-2.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 border-2 border-amber-100 shadow-2xl transition-all duration-700 group/card cursor-pointer">
+            <div class="relative w-52 h-52 sm:w-64 sm:h-64 mx-auto rounded-full overflow-hidden bg-slate-950 border-4 border-slate-950 group-hover/card:border-amber-300 transition-colors">
+              <img id="coupleImg-3"
+                   src="images/WhatsApp Image 2026-11-05 at 4.27.14 PM (1).jpeg"
+                   onerror="this.onerror=null; this.src='https://placehold.co/600x600/121826/facc15?text=Adham+%26+Aml+4';"
+                   alt="Adham and Aml Photo 4"
+                   class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 text-center">
+                <p class="font-arabic text-amber-200 text-sm font-bold">ليلة الزفاف</p>
+                <label onclick="event.stopPropagation()" class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-amber-400/90 text-slate-950 font-ui-ar font-bold text-[10px] cursor-pointer hover:bg-amber-300">
+                  تغيير الصورة
+                  <input type="file" accept="image/*" class="hidden" onchange="replaceGalleryPhoto(event, 3)" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ring Photo Card 4 -->
+          <div id="ringCard-4"
+               onclick="handleRingCardClick(4)"
+               onmouseenter="pauseRingHover(true)"
+               onmouseleave="pauseRingHover(false)"
+               class="ring-photo-item ring-slot-3 w-56 sm:w-68 rounded-full p-2.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 border-2 border-amber-100 shadow-2xl transition-all duration-700 group/card cursor-pointer">
+            <div class="relative w-52 h-52 sm:w-64 sm:h-64 mx-auto rounded-full overflow-hidden bg-slate-950 border-4 border-slate-950 group-hover/card:border-amber-300 transition-colors">
+              <img id="coupleImg-4"
+                   src="images/WhatsApp Image 2026-11-05 at 4.27.14 PM (2).jpeg"
+                   onerror="this.onerror=null; this.src='https://placehold.co/600x600/1e1b18/f6e09e?text=Adham+%26+Aml+5';"
+                   alt="Adham and Aml Photo 5"
+                   class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 text-center">
+                <p class="font-arabic text-amber-200 text-sm font-bold">أجمل اللحظات</p>
+                <label onclick="event.stopPropagation()" class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-amber-400/90 text-slate-950 font-ui-ar font-bold text-[10px] cursor-pointer hover:bg-amber-300">
+                  تغيير الصورة
+                  <input type="file" accept="image/*" class="hidden" onchange="replaceGalleryPhoto(event, 4)" />
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ring Carousel Controls -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
+          <button type="button" onclick="rotateRingGallery(-1)"
+                  class="px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-200 border border-amber-400/40 text-xs font-ui-ar transition flex items-center gap-1">
+            <span>←</span>
+            <span>السابق</span>
+          </button>
+
+          <div class="flex items-center gap-1.5" dir="ltr">
+            <button id="ringDot-0" type="button" onclick="bringRingPhotoToFront(0)" class="w-8 h-2.5 rounded-full bg-amber-400 transition-all"></button>
+            <button id="ringDot-1" type="button" onclick="bringRingPhotoToFront(1)" class="w-2.5 h-2.5 rounded-full bg-amber-400/35 transition-all"></button>
+            <button id="ringDot-2" type="button" onclick="bringRingPhotoToFront(2)" class="w-2.5 h-2.5 rounded-full bg-amber-400/35 transition-all"></button>
+            <button id="ringDot-3" type="button" onclick="bringRingPhotoToFront(3)" class="w-2.5 h-2.5 rounded-full bg-amber-400/35 transition-all"></button>
+            <button id="ringDot-4" type="button" onclick="bringRingPhotoToFront(4)" class="w-2.5 h-2.5 rounded-full bg-amber-400/35 transition-all"></button>
+          </div>
+
+          <button type="button" onclick="rotateRingGallery(1)"
+                  class="px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-200 border border-amber-400/40 text-xs font-ui-ar transition flex items-center gap-1">
+            <span>التالي</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- Swipe / Slide Hint -->
+        <p class="text-[11px] font-ui-ar text-amber-300/60 mt-2">
+          يمكنك أيضاً سحب الصور باللمس أو الماوس يميناً ويساراً للتنقل السريع
+        </p>
+
+        <!-- FULL UNCLIPPED IMAGE REVIEW LIGHTBOX ON PRESS / CLICK -->
+        <div id="fullImageReviewModal"
+             class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85 backdrop-blur-md transition-all duration-300"
+             onclick="closeFullImageReview()">
+          <div class="relative max-w-xl w-full p-4 sm:p-6 rounded-3xl bg-gradient-to-b from-slate-900 via-slate-950 to-amber-950/70 border-2 border-amber-400/80 shadow-[0_30px_90px_rgba(0,0,0,0.95)] flex flex-col items-center"
+               onclick="event.stopPropagation()">
+            <!-- Top-right corner close button -->
+            <button type="button" onclick="closeFullImageReview()"
+                    class="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-slate-900/95 hover:bg-amber-500 text-amber-200 hover:text-slate-950 border border-amber-400/60 flex items-center gap-1.5 text-xs font-bold font-ui-ar shadow-lg transition z-20 cursor-pointer active:scale-95"
+                    aria-label="إغلاق المعاينة">
+              <span>✕</span>
+              <span>إغلاق</span>
+            </button>
+
+            <!-- Full Uncropped Image Preview -->
+            <div class="w-full overflow-hidden rounded-2xl flex items-center justify-center bg-black/75 max-h-[72vh] p-1 border border-amber-400/30">
+              <img id="fullImageReviewImg" src="" alt="صورة الزفاف كاملة"
+                   class="w-auto h-auto max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl" />
+            </div>
+
+            <!-- Image Details in Review -->
+            <div class="mt-3 text-center w-full flex flex-col items-center">
+              <p id="fullImageReviewTitleEn" class="name-italic-script gold-foil-text text-3xl" dir="ltr">Adham &amp; Aml</p>
+              <p id="fullImageReviewTitleAr" class="font-arabic text-amber-200 text-base font-bold mt-0.5"></p>
+              <span class="text-[11px] font-ui-ar text-amber-300/75 block mt-1">
+                الصورة كاملة بدون قص
+              </span>
+
+              <!-- Prominent Bottom Close Button -->
+              <button type="button" onclick="closeFullImageReview()"
+                      class="mt-3 px-6 py-2 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-ui-ar font-bold text-sm shadow-xl transition flex items-center gap-2 cursor-pointer active:scale-95">
+                <span>✕</span>
+                <span>إغلاق الصورة</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENARIO 5: GOLDEN NIGHT SHADED SKETCH OF "GRAND STAR 2" (تظليل ليلي مذهب)
+         =================================================================== -->
+    <section id="sketchSection" class="py-6 sm:py-10">
+      <div class="celestial-card rounded-3xl p-4 sm:p-8 md:p-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 text-center md:text-right">
+          <div>
+            <span class="text-xs font-ui-ar text-amber-300/85 block">لوحة فنية بتظليل ليلي مذهب</span>
+            <h2 class="font-arabic text-2xl sm:text-4xl font-bold text-amber-100 mt-0.5">
+              اسكتش قاعة الزفاف — «جراند ستار 2»
+            </h2>
+            <p class="font-arabic text-base sm:text-lg text-amber-200/80 mt-1">
+              رسم معماري واقعي بتظليل ليلي مذهب لواجهة قاعة <span dir="ltr" class="font-semibold text-amber-300">Grand Star 2</span> وأقواس الزهور المضيئة
+            </p>
+          </div>
+        </div>
+
+        <!-- GOLDEN NIGHT SHADED ARCHITECTURAL SKETCH CANVAS -->
+        <div id="venueSketchFrame" class="sketch-night-paper rounded-2xl p-2 sm:p-5 relative overflow-hidden transition-all duration-500">
+          <div class="border border-amber-400/35 rounded-xl p-1.5 sm:p-3 relative bg-[#070c18]/90">
+            <canvas id="realisticPencilCanvas" width="1100" height="1020"
+                    class="w-full h-auto max-h-[720px] mx-auto block rounded-lg shadow-inner"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENARIO 4 & 6: LOCATION IN ARABIC (NO POSTAL CODE)
+         طريق منقباد ← قاعة جراند ستار 2 | 52PV+MP, Bani Ghaleb, Asyut, Assiut Governorate
+         =================================================================== -->
+    <section id="locationSection" class="py-6 sm:py-10">
+      <div class="celestial-card rounded-3xl p-5 sm:p-10 md:p-12 relative overflow-hidden">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-ui-ar text-amber-300/85 block">عنوان وموقع القاعة بالتفصيل</span>
+          <h2 class="font-arabic text-3xl sm:text-5xl font-bold text-amber-100 mt-1">
+            طريق منقباد ← قاعة جراند ستار 2
+          </h2>
+          <p class="text-base sm:text-xl text-amber-300 mt-2 font-ui-ar" dir="ltr">
+            Manqabad Road → Grand Star 2
+          </p>
+        </div>
+
+        <!-- Visual Route Flow Diagram in Arabic (Responsive 1 -> 3 Columns) -->
+        <div class="my-6 sm:my-8 p-4 sm:p-7 rounded-2xl bg-slate-950/85 border border-amber-400/35">
+          <p class="text-xs sm:text-sm font-ui-ar text-amber-300 text-center mb-5 font-semibold">
+            خط السير المباشر للقاعة (حوالي ١٨ دقيقة من وسط مدينة أسيوط)
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <!-- Step 1 -->
+            <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-400/30 text-center">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-ui-ar font-semibold mb-1">الخطوة الأولى</span>
+              <h3 class="font-arabic text-xl sm:text-2xl font-bold text-amber-100">طريق منقباد</h3>
+              <p class="text-xs font-ui-ar text-amber-200/85 mt-1" dir="ltr">Manqabad Road</p>
+              <p class="text-xs font-ui-ar text-slate-300 mt-1">الانطلاق من أسيوط عبر طريق منقباد</p>
+            </div>
+
+            <!-- Arrow Indicator -->
+            <div class="flex flex-col items-center justify-center py-1">
+              <div class="flex items-center gap-2 text-amber-400">
+                <span class="px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/45 text-xs font-ui-ar text-amber-100 font-semibold">
+                  مروراً بطريق منقباد - بني غالب ⬅
+                </span>
+              </div>
+              <p class="font-arabic text-sm text-amber-300/85 mt-1.5">باتجاه بني غالب</p>
+            </div>
+
+            <!-- Step 2: Grand Star 2 Destination (No Postal Code) -->
+            <div class="p-4 rounded-xl bg-gradient-to-br from-amber-500/25 to-amber-600/10 border-2 border-amber-400/65 text-center shadow-lg">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-400 text-slate-950 font-bold text-xs font-ui-ar mb-1">وجهة الفرح</span>
+              <h3 class="font-arabic text-2xl font-bold text-amber-200">قاعة جراند ستار 2</h3>
+              <p class="text-xs font-ui-ar text-amber-100 font-semibold mt-0.5" dir="ltr">Grand Star 2</p>
+              <p class="text-xs font-ui-ar text-amber-200/90 mt-1">بني غالب، أسيوط، محافظة أسيوط</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exact Address & Plus Code Card (No Postal Code) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+          <div class="lg:col-span-7 p-5 sm:p-6 rounded-2xl bg-[#0a0f1d] border border-amber-400/50 flex flex-col justify-between space-y-4 shadow-xl text-right">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-ui-ar font-semibold mb-3">
+                <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+                <span>موقع القاعة على خرائط جوجل</span>
+              </div>
+
+              <h3 class="font-arabic text-2xl sm:text-3xl font-bold text-amber-300 leading-snug">
+                قاعة جراند ستار 2 — طريق منقباد، بني غالب، أسيوط، محافظة أسيوط
+              </h3>
+
+              <p class="text-base sm:text-xl font-semibold text-[#FFFDF9] mt-2 font-ui-ar" dir="ltr">
+                52PV+MP, Bani Ghaleb, Asyut, Assiut Governorate
+              </p>
+
+              <p class="text-sm font-ui-ar text-amber-50/90 mt-3 leading-relaxed">
+                تقع <strong class="text-amber-300">قاعة جراند ستار 2 (Grand Star 2)</strong> على <strong class="text-white">طريق منقباد</strong> في منطقة <strong class="text-white">بني غالب</strong> بمحافظة أسيوط. يمكنك الضغط على الزر بالأسفل لفتح الموقع مباشرة عبر خرائط جوجل (Google Maps).
+              </p>
+            </div>
+
+            <!-- Action Buttons: Open Google Maps & Copy Address -->
+            <div class="flex flex-wrap items-center gap-3 pt-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=52PV%2BMP%2C+Bani+Ghaleb%2C+Asyut%2C+Assiut+Governorate"
+                 target="_blank" rel="noopener noreferrer"
+                 class="w-full sm:w-auto justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-slate-950 font-ui-ar font-bold text-xs sm:text-sm shadow-lg hover:brightness-110 transition flex items-center gap-2">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span>فتح الموقع في خرائط جوجل</span>
+              </a>
+
+              <button type="button" onclick="copyVenueAddress()"
+                      class="w-full sm:w-auto justify-center px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-200 border border-amber-400/50 font-ui-ar font-semibold text-xs sm:text-sm transition flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                <span>نسخ العنوان ورمز الموقع</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stylized Interactive Route Map Card (No Postal Code) -->
+          <div class="lg:col-span-5 p-5 rounded-2xl bg-[#0a0f1d] border border-amber-400/50 flex flex-col justify-between relative overflow-hidden shadow-xl">
+            <div class="flex items-center justify-between text-xs font-ui-ar font-bold text-amber-300 mb-2">
+              <span>محافظة أسيوط — بني غالب</span>
+              <span class="font-mono text-amber-400" dir="ltr">52PV+MP</span>
+            </div>
+
+            <!-- Route Map SVG -->
+            <svg viewBox="0 0 320 200" class="w-full h-44 rounded-xl bg-slate-900/95 border border-amber-500/25">
+              <g stroke="rgba(212,175,55,0.1)" stroke-width="1">
+                <line x1="0" y1="40" x2="320" y2="40" /><line x1="0" y1="80" x2="320" y2="80" />
+                <line x1="0" y1="120" x2="320" y2="120" /><line x1="0" y1="160" x2="320" y2="160" />
+                <line x1="60" y1="0" x2="60" y2="200" /><line x1="120" y1="0" x2="120" y2="200" />
+                <line x1="180" y1="0" x2="180" y2="200" /><line x1="240" y1="0" x2="240" y2="200" />
+              </g>
+              <path d="M 290 200 C 260 140, 250 80, 210 0" stroke="rgba(56, 189, 248, 0.22)" stroke-width="14" fill="none" />
+              <path d="M 255 162 Q 185 130 155 105 T 72 48" stroke="#d4af37" stroke-width="3.5" stroke-dasharray="6 4" fill="none" />
+
+              <circle cx="255" cy="162" r="5" fill="#94a3b8" />
+              <text x="255" y="184" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="'Cairo', sans-serif">مدينة أسيوط</text>
+
+              <circle cx="155" cy="105" r="5" fill="#f59e0b" />
+              <text x="160" y="90" text-anchor="middle" fill="#fde68a" font-size="11" font-family="'Cairo', sans-serif">طريق منقباد</text>
+
+              <circle cx="72" cy="48" r="14" fill="rgba(212, 175, 55, 0.28)" class="animate-ping" />
+              <circle cx="72" cy="48" r="7" fill="#fbbf24" stroke="#ffffff" stroke-width="2" />
+              <text x="135" y="32" text-anchor="middle" fill="#fef08a" font-weight="bold" font-size="12" font-family="'Cairo', sans-serif">★ قاعة جراند ستار 2</text>
+              <text x="135" y="46" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="sans-serif">52PV+MP Bani Ghaleb</text>
+            </svg>
+
+            <div class="mt-3 flex items-center justify-between text-xs font-ui-ar text-slate-300">
+              <span>طريق منقباد ← بني غالب، أسيوط</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=52PV%2BMP%2C+Bani+Ghaleb%2C+Asyut%2C+Assiut+Governorate"
+                 target="_blank" rel="noopener noreferrer"
+                 class="text-amber-300 hover:underline font-semibold">
+                فتح الخريطة ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         GUESTBOOK & WISHES IN ARABIC
+         =================================================================== -->
+    <section id="rsvpSection" class="py-6 sm:py-10">
+      <div class="celestial-card rounded-3xl p-5 sm:p-10 md:p-12">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-ui-ar text-amber-300/85 block">سجل التهاني والمباركات</span>
+          <h2 class="font-arabic text-2xl sm:text-4xl font-bold text-amber-100 mt-1">
+            اترك تهنئة للعروسين <span class="name-italic-script text-amber-300 text-3xl sm:text-4xl mx-1" dir="ltr">Adham &amp; Aml</span>
+          </h2>
+          <p class="font-arabic text-base sm:text-lg text-amber-200/80 mt-1">
+            يسعدنا استقبال كلماتكم الطيبة وتأكيد حضوركم يوم الإثنين الساعة ٨:٠٠ مساءً
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <!-- Arabic Wishes Form -->
+          <form id="wishesForm" onsubmit="submitGuestWish(event)" class="md:col-span-6 space-y-4 font-ui-ar text-right">
+            <div>
+              <label class="block text-xs text-amber-200/90 mb-1 font-semibold">الاسم الكريم</label>
+              <input id="guestNameInput" type="text" required placeholder="مثال: المهندس محمود والعائلة"
+                     class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-amber-400/40 text-amber-100 text-sm focus:outline-none focus:border-amber-400" />
+            </div>
+
+            <div>
+              <label class="block text-xs text-amber-200/90 mb-1 font-semibold">تأكيد الحضور</label>
+              <select id="guestStatusInput" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-amber-400/40 text-amber-100 text-sm focus:outline-none focus:border-amber-400">
+                <option value="سأحضر بإذن الله ✨">سأتشرف بالحضور يوم الإثنين ٨ مساءً ✨</option>
+                <option value="أرسل أجمل التهاني 🤍">أرسل أجمل التهاني والمباركات 🤍</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs text-amber-200/90 mb-1 font-semibold">رسالة التهنئة للعروسين أدهم وأمل</label>
+              <textarea id="guestMessageInput" rows="3" required placeholder="بارك الله لكما وبارك عليكما وجمع بينكما في خير..."
+                        class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-amber-400/40 text-amber-100 text-sm focus:outline-none focus:border-amber-400"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-slate-950 font-bold text-sm shadow-lg hover:brightness-110 transition">
+              إرسال التهنئة للعروسين
+            </button>
+          </form>
+
+          <!-- Live Wishes Feed -->
+          <div class="md:col-span-6 flex flex-col justify-between">
+            <div id="wishesWall" class="space-y-3 max-h-72 overflow-y-auto pl-1 text-right">
+              <div class="p-4 rounded-2xl bg-slate-950/85 border border-amber-400/30">
+                <div class="flex items-center justify-between text-xs font-ui-ar text-amber-300">
+                  <span class="font-bold">الأهل والأحباب</span>
+                  <span>سأحضر بإذن الله ✨</span>
+                </div>
+                <p class="font-arabic text-amber-100 text-lg mt-1.5">
+                  «بارك الله لكما وبارك عليكما وجمع بينكما في خير.. نلقاكم على خير يوم الإثنين الساعة ٨ مساءً في قاعة جراند ستار 2»
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/85 border border-amber-400/30">
+                <div class="flex items-center justify-between text-xs font-ui-ar text-amber-300">
+                  <span class="font-bold">أصدقاء العروسين بأسيوط</span>
+                  <span>سأحضر بإذن الله ✨</span>
+                </div>
+                <p class="font-arabic text-amber-100 text-lg mt-1.5">
+                  «ألف مبروك لأغلى عروسين أدهم و أمل! ربنا يتمم فرحتكم على خير ويجعل أيامكم كلها سعادة»
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pt-10 pb-6 text-amber-200/70">
+      <div class="name-italic-script gold-foil-text text-4xl sm:text-5xl mb-2" dir="ltr">
+        Adham &amp; Aml
+      </div>
+      <p class="font-arabic text-lg text-amber-200 mb-1">
+        أدهم ♡ أمل
+      </p>
+      <p class="text-xs font-ui-ar text-amber-300/75">
+        يوم الإثنين • الساعة ٨:٠٠ مساءً • طريق منقباد ← قاعة جراند ستار 2 • بني غالب، أسيوط
+      </p>
+    </footer>
+  </main>
+
+  <!-- =====================================================================
+       CUSTOM TOAST NOTIFICATION (ARABIC)
+       ===================================================================== -->
+  <div id="toastNotification" class="fixed bottom-5 right-4 z-50 max-w-sm px-4 py-3 rounded-2xl bg-slate-900/95 border-2 border-amber-400 text-amber-100 shadow-2xl transform translate-y-24 opacity-0 pointer-events-none transition-all duration-500 flex items-center gap-3 font-ui-ar text-xs sm:text-sm">
+    <span class="w-6 h-6 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold shrink-0">✓</span>
+    <span id="toastMessageText">تم النسخ بنجاح!</span>
+  </div>
+
+  <!-- =====================================================================
+       JAVASCRIPT LOGIC (MUSIC PLAY/STOP, 3D DOORS, COUNTDOWN, SKETCH, GALLERY)
+       ===================================================================== -->
+  <script>
+    // =====================================================================
+    // 1. CONTINUOUS ROMANTIC WEDDING MUSIC PLAYER + PLAY / STOP BUTTON
+    // =====================================================================
+    let audioCtx = null;
+    let isMusicPlaying = false;
+    let musicLoopInterval = null;
+    let activeOscillators = [];
+
+    // Romantic Harp & Warm Piano Arpeggio Progression (Fmaj7 -> G6 -> Em7 -> Am9)
+    const melodyChords = [
+      [349.23, 440.00, 523.25, 659.25, 783.99, 1046.50],
+      [392.00, 493.88, 587.33, 659.25, 783.99, 1174.66],
+      [329.63, 392.00, 493.88, 587.33, 783.99, 987.77],
+      [440.00, 523.25, 659.25, 783.99, 987.77, 1318.51]
+    ];
+    let currentChordIndex = 0;
+
+    function ensureAudioContext() {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return null;
+      if (!audioCtx) {
+        audioCtx = new AudioContextClass();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSingleMeasure() {
+      if (!isMusicPlaying) return;
+      try {
+        const ctx = ensureAudioContext();
+        if (!ctx) return;
+
+        const chord = melodyChords[currentChordIndex % melodyChords.length];
+        currentChordIndex++;
+        const now = ctx.currentTime;
+
+        chord.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc.type = idx % 2 === 0 ? 'sine' : 'triangle';
+          const startTime = now + idx * 0.36;
+          osc.frequency.setValueAtTime(freq, startTime);
+
+          gain.gain.setValueAtTime(0.0001, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.065, startTime + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.0001, startTime + 2.4);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(startTime);
+          osc.stop(startTime + 2.5);
+          activeOscillators.push(osc);
+
+          osc.onended = () => {
+            activeOscillators = activeOscillators.filter(o => o !== osc);
+          };
+        });
+      } catch (e) {
+        // Ignore audio context restriction errors
+      }
+    }
+
+    function startWeddingMusic() {
+      if (isMusicPlaying) return;
+      isMusicPlaying = true;
+      playSingleMeasure();
+      clearInterval(musicLoopInterval);
+      musicLoopInterval = setInterval(() => {
+        if (isMusicPlaying) {
+          playSingleMeasure();
+        }
+      }, 2600);
+      updateMusicUI();
+    }
+
+    function stopWeddingMusic() {
+      isMusicPlaying = false;
+      clearInterval(musicLoopInterval);
+      musicLoopInterval = null;
+
+      // Immediately silence all active notes
+      activeOscillators.forEach(osc => {
+        try { osc.stop(); } catch (e) {}
+      });
+      activeOscillators = [];
+      updateMusicUI();
+    }
+
+    function toggleWeddingMusic() {
+      if (isMusicPlaying) {
+        stopWeddingMusic();
+        showToast('تم إيقاف الموسيقى');
+      } else {
+        startWeddingMusic();
+        showToast('تم تشغيل موسيقى الزفاف ♪');
+      }
+    }
+
+    function updateMusicUI() {
+      const btnText = document.getElementById('musicBtnText');
+      const eq = document.getElementById('musicEqIndicator');
+      const floatingLabel = document.getElementById('floatingMusicLabel');
+
+      if (isMusicPlaying) {
+        btnText.textContent = 'إيقاف الموسيقى';
+        floatingLabel.textContent = 'إيقاف الموسيقى';
+        eq.classList.remove('eq-paused');
+      } else {
+        btnText.textContent = 'تشغيل الموسيقى';
+        floatingLabel.textContent = 'تشغيل الموسيقى';
+        eq.classList.add('eq-paused');
+      }
+    }
+
+    // =====================================================================
+    // 2. ANTIQUE DOOR KNOCKER SOUND + 3-KNOCK ANIMATION + HEAVEN DOORS OPEN
+    // =====================================================================
+    let doorsAreOpen = false;
+    let isKnockingInProgress = false;
+    let doorsHideTimeout = null;
+
+    // Synthesize 3 Realistic Metallic Door Knocks + Old Doorbell Chime
+    function playDoorKnockerSound() {
+      try {
+        const ctx = ensureAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+        const knockTimes = [0.22, 0.50, 0.80];
+
+        knockTimes.forEach((offset, idx) => {
+          const t = now + offset;
+
+          // Deep Wooden/Metallic Door Thud
+          const thudOsc = ctx.createOscillator();
+          const thudGain = ctx.createGain();
+          thudOsc.type = 'triangle';
+          thudOsc.frequency.setValueAtTime(165 - idx * 8, t);
+          thudOsc.frequency.exponentialRampToValueAtTime(48, t + 0.14);
+
+          thudGain.gain.setValueAtTime(0.001, t);
+          thudGain.gain.linearRampToValueAtTime(0.42, t + 0.012);
+          thudGain.gain.exponentialRampToValueAtTime(0.001, t + 0.16);
+
+          thudOsc.connect(thudGain);
+          thudGain.connect(ctx.destination);
+          thudOsc.start(t);
+          thudOsc.stop(t + 0.17);
+
+          // Brass Anvil Ring Resonance + Vintage Doorbell Overtones
+          const bellOsc = ctx.createOscillator();
+          const bellGain = ctx.createGain();
+          bellOsc.type = 'sine';
+          bellOsc.frequency.setValueAtTime(idx === 2 ? 1046.5 : 880, t);
+
+          bellGain.gain.setValueAtTime(0.001, t);
+          bellGain.gain.linearRampToValueAtTime(0.12, t + 0.01);
+          bellGain.gain.exponentialRampToValueAtTime(0.0008, t + 0.35);
+
+          bellOsc.connect(bellGain);
+          bellGain.connect(ctx.destination);
+          bellOsc.start(t);
+          bellOsc.stop(t + 0.36);
+        });
+      } catch (e) {}
+    }
+
+    function openHeavenDoors() {
+      if (doorsAreOpen || isKnockingInProgress) return;
+      isKnockingInProgress = true;
+
+      const knockerBtn = document.getElementById('openGatesButton');
+      knockerBtn.classList.remove('knocker-idle');
+      knockerBtn.classList.add('knocker-striking');
+
+      // Play the 3 realistic door knocks synchronized with the knocker animation
+      playDoorKnockerSound();
+
+      // After the 3 knocks complete (~980ms), swing open the Heaven Doors & start music
+      setTimeout(() => {
+        doorsAreOpen = true;
+        isKnockingInProgress = false;
+
+        startWeddingMusic();
+
+        const overlay = document.getElementById('heavenGatesOverlay');
+        const backdrop = document.getElementById('heavenBackdrop');
+        const topBar = document.getElementById('topBar');
+        const floatingMusicBtn = document.getElementById('floatingMusicBtn');
+
+        overlay.classList.add('gates-opened');
+        document.body.classList.add('invitation-unlocked');
+
+        setTimeout(() => {
+          backdrop.style.opacity = '0';
+        }, 250);
+
+        clearTimeout(doorsHideTimeout);
+        doorsHideTimeout = setTimeout(() => {
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+          overlay.style.visibility = 'hidden';
+          overlay.style.display = 'none';
+          topBar.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+          floatingMusicBtn.classList.remove('opacity-0', 'pointer-events-none');
+        }, 1250);
+      }, 980);
+    }
+
+    function replayHeavenDoors() {
+      clearTimeout(doorsHideTimeout);
+      const overlay = document.getElementById('heavenGatesOverlay');
+      const backdrop = document.getElementById('heavenBackdrop');
+      const topBar = document.getElementById('topBar');
+      const floatingMusicBtn = document.getElementById('floatingMusicBtn');
+      const knockerBtn = document.getElementById('openGatesButton');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      topBar.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+      floatingMusicBtn.classList.add('opacity-0', 'pointer-events-none');
+      document.body.classList.remove('invitation-unlocked');
+
+      knockerBtn.classList.remove('knocker-striking');
+      knockerBtn.classList.add('knocker-idle');
+
+      overlay.style.display = 'flex';
+      overlay.style.visibility = 'visible';
+      overlay.style.opacity = '1';
+      overlay.style.pointerEvents = 'auto';
+      backdrop.style.opacity = '1';
+
+      void overlay.offsetWidth;
+      overlay.classList.remove('gates-opened');
+      doorsAreOpen = false;
+      isKnockingInProgress = false;
+    }
+
+    // =====================================================================
+    // 3. 3D GOLDEN WEDDING RING AUTOMATIC PHOTO SHUFFLE CAROUSEL
+    // =====================================================================
+    let currentRingFrontIndex = 0;
+    let isRingHoverPaused = false;
+    let ringShuffleInterval = null;
+
+    // Drag and Swipe Tracking Variables (Slide to view next / previous)
+    let ringTouchStartX = null;
+    let ringDragStartX = null;
+    let isRingDragging = false;
+    let ringHasSwiped = false;
+
+    const ringPhotoMeta = [
+      { id: 0, titleEn: 'Adham & Aml', titleAr: '' },
+      { id: 1, titleEn: '', titleAr: 'فرحة العمر' },
+      { id: 2, titleEn: '', titleAr: 'أدهم ♡ أمل' },
+      { id: 3, titleEn: '', titleAr: 'ليلة الزفاف' },
+      { id: 4, titleEn: '', titleAr: 'أجمل اللحظات' }
+    ];
+
+    function updateRingCarouselPositions() {
+      const total = 5;
+      for (let i = 0; i < total; i++) {
+        const card = document.getElementById(`ringCard-${i}`);
+        const dot = document.getElementById(`ringDot-${i}`);
+        if (!card) continue;
+
+        card.classList.remove('ring-slot-0', 'ring-slot-1', 'ring-slot-2', 'ring-slot-3', 'ring-slot-hidden');
+        if (total <= 4) {
+          const rel = (i - currentRingFrontIndex + total) % total;
+          card.classList.add(`ring-slot-${rel}`);
+        } else {
+          const offset = (i - currentRingFrontIndex + total) % total;
+          if (offset === 0) card.classList.add('ring-slot-0');
+          else if (offset === 1) card.classList.add('ring-slot-1');
+          else if (offset === total - 1) card.classList.add('ring-slot-3');
+          else if (offset === 2) card.classList.add('ring-slot-2');
+          else card.classList.add('ring-slot-hidden');
+        }
+
+        if (dot) {
+          if (i === currentRingFrontIndex) {
+            dot.className = 'w-8 h-2.5 rounded-full bg-amber-400 transition-all';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400/35 hover:bg-amber-400/70 transition-all';
+          }
+        }
+      }
+    }
+
+    function rotateRingGallery(step) {
+      currentRingFrontIndex = (currentRingFrontIndex + step + 5) % 5;
+      updateRingCarouselPositions();
+    }
+
+    function bringRingPhotoToFront(index) {
+      currentRingFrontIndex = index;
+      updateRingCarouselPositions();
+    }
+
+    function pauseRingHover(paused) {
+      isRingHoverPaused = paused;
+    }
+
+    // Touch Swipe Handlers (Slide to next / previous image)
+    function handleRingTouchStart(e) {
+      if (e.touches && e.touches.length > 0) {
+        ringTouchStartX = e.touches[0].clientX;
+        ringHasSwiped = false;
+      }
+    }
+
+    function handleRingTouchMove(e) {
+      if (ringTouchStartX === null || ringHasSwiped || !e.touches || e.touches.length === 0) return;
+      const diffX = e.touches[0].clientX - ringTouchStartX;
+      const threshold = 40; // px
+      if (diffX < -threshold) {
+        // Swiped Left -> Next
+        rotateRingGallery(1);
+        ringHasSwiped = true;
+      } else if (diffX > threshold) {
+        // Swiped Right -> Prev
+        rotateRingGallery(-1);
+        ringHasSwiped = true;
+      }
+    }
+
+    function handleRingTouchEnd() {
+      ringTouchStartX = null;
+      // Delay resetting ringHasSwiped so synthetic mobile click after swipe is safely ignored
+      setTimeout(function() {
+        ringHasSwiped = false;
+      }, 120);
+    }
+
+    // Mouse Drag Handlers (Slide to next / previous image on desktop)
+    function handleRingMouseDown(e) {
+      if (e.button !== 0) return;
+      isRingDragging = true;
+      ringDragStartX = e.clientX;
+      ringHasSwiped = false;
+    }
+
+    function handleRingMouseMove(e) {
+      if (!isRingDragging || ringDragStartX === null || ringHasSwiped) return;
+      const diffX = e.clientX - ringDragStartX;
+      const threshold = 45;
+      if (diffX < -threshold) {
+        rotateRingGallery(1);
+        ringHasSwiped = true;
+      } else if (diffX > threshold) {
+        rotateRingGallery(-1);
+        ringHasSwiped = true;
+      }
+    }
+
+    function handleRingMouseUp() {
+      isRingDragging = false;
+      ringDragStartX = null;
+      setTimeout(function() {
+        ringHasSwiped = false;
+      }, 120);
+    }
+
+    function handleRingMouseLeave() {
+      handleRingMouseUp();
+      pauseRingHover(false);
+    }
+
+    // Press / Click Card to Bring to Front and Open Full Image Review
+    function handleRingCardClick(index) {
+      if (ringHasSwiped) return;
+      bringRingPhotoToFront(index);
+      openFullImageReview(index);
+    }
+
+    function openFullImageReview(index) {
+      const modal = document.getElementById('fullImageReviewModal');
+      const img = document.getElementById('fullImageReviewImg');
+      const titleEn = document.getElementById('fullImageReviewTitleEn');
+      const titleAr = document.getElementById('fullImageReviewTitleAr');
+      const sourceImg = document.getElementById(`coupleImg-${index}`);
+      if (!modal || !img || !sourceImg) return;
+
+      img.src = sourceImg.src;
+      const meta = ringPhotoMeta[index] || {};
+      if (titleEn) {
+        titleEn.textContent = meta.titleEn || (meta.titleAr ? '' : 'Adham & Aml');
+        titleEn.style.display = (meta.titleEn || !meta.titleAr) ? 'block' : 'none';
+      }
+      if (titleAr) {
+        titleAr.textContent = meta.titleAr || '';
+        titleAr.style.display = meta.titleAr ? 'block' : 'none';
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeFullImageReview() {
+      const modal = document.getElementById('fullImageReviewModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function isFullImageReviewOpen() {
+      const modal = document.getElementById('fullImageReviewModal');
+      return modal && !modal.classList.contains('hidden');
+    }
+
+    // Keyboard Accessibility: Close lightbox on Escape key
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isFullImageReviewOpen()) {
+        closeFullImageReview();
+      }
+    });
+
+    function initRingPhotoShuffle() {
+      try {
+        fetch('images/images.json')
+          .then(res => res.ok ? res.json() : null)
+          .then(urls => {
+            if (Array.isArray(urls) && urls.length > 0) {
+              urls.forEach((url, idx) => {
+                const img = document.getElementById(`coupleImg-${idx}`);
+                if (img) img.src = url;
+              });
+            }
+          }).catch(() => {});
+      } catch (e) {}
+
+      updateRingCarouselPositions();
+      clearInterval(ringShuffleInterval);
+      ringShuffleInterval = setInterval(() => {
+        if (!isRingHoverPaused && !isFullImageReviewOpen()) {
+          rotateRingGallery(1);
+        }
+      }, 3200);
+    }
+
+    // =====================================================================
+    // 4. LIVE COUNTDOWN TO MONDAY 8:00 PM (ARABIC)
+    // =====================================================================
+    let targetWeddingDate = getNextMondayAt8PM();
+
+    function getNextMondayAt8PM() {
+      const now = new Date();
+      const result = new Date(now);
+      const currentDay = now.getDay(); // 0 = Sun, 1 = Mon
+      let daysUntilMonday = (1 - currentDay + 7) % 7;
+
+      if (daysUntilMonday === 0 && (now.getHours() > 20 || (now.getHours() === 20 && now.getMinutes() > 0))) {
+        daysUntilMonday = 7;
+      }
+
+      result.setDate(now.getDate() + daysUntilMonday);
+      result.setHours(20, 0, 0, 0);
+      return result;
+    }
+
+    function formatArabicTargetDate(dateObj) {
+      try {
+        const formatted = dateObj.toLocaleDateString('ar-EG', {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+        return `${formatted} • ٨:٠٠ مساءً`;
+      } catch (e) {
+        return 'يوم الإثنين • ٨:٠٠ مساءً';
+      }
+    }
+
+    function updateCountdownDisplay() {
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minutesEl = document.getElementById('cd-minutes');
+      const secondsEl = document.getElementById('cd-seconds');
+      const statusEl = document.getElementById('countdownStatusNote');
+      const labelEl = document.getElementById('targetDateLabel');
+
+      if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+      const now = new Date();
+      const diff = targetWeddingDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        if (statusEl) {
+          statusEl.textContent =
+            '✨ الليلة ليلة العمر! نحتفل بزفاف أدهم و أمل في قاعة جراند ستار 2 ✨';
+        }
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+      if (labelEl) {
+        labelEl.textContent = formatArabicTargetDate(targetWeddingDate);
+      }
+    }
+
+    function toggleDateAdjuster() {
+      document.getElementById('dateAdjusterBox').classList.toggle('hidden');
+    }
+
+    function applyCustomDate() {
+      const inputVal = document.getElementById('customWeddingDateInput').value;
+      if (!inputVal) {
+        showToast('يرجى اختيار التاريخ أولاً');
+        return;
+      }
+      targetWeddingDate = new Date(inputVal);
+      updateCountdownDisplay();
+      toggleDateAdjuster();
+      showToast('تم تحديث موعد العد التنازلي بنجاح');
+    }
+
+    function resetToNextMonday() {
+      targetWeddingDate = getNextMondayAt8PM();
+      updateCountdownDisplay();
+      toggleDateAdjuster();
+      showToast('تم ضبط العداد على يوم الإثنين القادم الساعة ٨:٠٠ مساءً');
+    }
+
+    // =====================================================================
+    // 5. COUPLE PHOTO GALLERY REPLACEMENT HANDLER
+    // =====================================================================
+    function replaceGalleryPhoto(event, slotIndex) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const imgEl = document.getElementById(`coupleImg-${slotIndex}`);
+        if (imgEl) {
+          imgEl.src = ev.target.result;
+          showToast('تم تحديث الصورة في خاتم العروسين بنجاح ✨');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // =====================================================================
+    // 6. GOLDEN NIGHT SHADED SKETCH ENGINE (تظليل ليلي مذهب)
+    //    (Faithfully renders "GRAND STAR 2" in realistic golden-night shading)
+    // =====================================================================
+    function createSeededRandom(seed) {
+      let s = seed % 2147483647;
+      if (s <= 0) s += 2147483646;
+      return function() {
+        s = (s * 16807) % 2147483647;
+        return (s - 1) / 2147483646;
+      };
+    }
+
+    function renderPhotorealisticGrandStarSketch() {
+      const canvas = document.getElementById('realisticPencilCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
+      const rand = createSeededRandom(81915);
+
+      // Helper: Hand-drawn metallic gold & charcoal pencil line
+      function pencilLine(x1, y1, x2, y2, weight = 1.2, alpha = 0.75, color = '#e6c875', passes = 2) {
+        ctx.save();
+        ctx.strokeStyle = color;
+        for (let p = 0; p < passes; p++) {
+          ctx.beginPath();
+          ctx.lineWidth = weight * (0.85 + rand() * 0.35);
+          ctx.globalAlpha = (alpha / passes) * (0.85 + rand() * 0.3);
+          const jx1 = x1 + (rand() - 0.5) * 1.5;
+          const jy1 = y1 + (rand() - 0.5) * 1.5;
+          const jx2 = x2 + (rand() - 0.5) * 1.5;
+          const jy2 = y2 + (rand() - 0.5) * 1.5;
+          const mx = (jx1 + jx2) / 2 + (rand() - 0.5) * 2.0;
+          const my = (jy1 + jy2) / 2 + (rand() - 0.5) * 2.0;
+          ctx.moveTo(jx1, jy1);
+          ctx.quadraticCurveTo(mx, my, jx2, jy2);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // Helper: Realistic Golden-Night Pencil Hatching Region
+      function pencilHatchRect(x, y, w, h, spacing = 5, angleDeg = 35, alpha = 0.22, color = '#d4af37') {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(x, y, w, h);
+        ctx.clip();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 0.85;
+        const rad = (angleDeg * Math.PI) / 180;
+        const cos = Math.cos(rad);
+        const sin = Math.sin(rad);
+        const diag = Math.hypot(w, h);
+        const cx = x + w / 2;
+        const cy = y + h / 2;
+        for (let d = -diag; d <= diag; d += spacing) {
+          ctx.globalAlpha = alpha * (0.7 + rand() * 0.5);
+          const px1 = cx + d * cos - diag * sin;
+          const py1 = cy + d * sin + diag * cos;
+          const px2 = cx + d * cos + diag * sin;
+          const py2 = cy + d * sin - diag * cos;
+          ctx.beginPath();
+          ctx.moveTo(px1, py1);
+          ctx.lineTo(px2, py2);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // Helper: Realistic Golden-Illuminated Botanical Leaf with Veins
+      function drawRealisticLeaf(x, y, length, angle, tone = 'light') {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+
+        const w = length * 0.44;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(length * 0.3, -w, length * 0.72, -w * 0.85, length, 0);
+        ctx.bezierCurveTo(length * 0.72, w * 0.85, length * 0.3, w, 0, 0);
+        ctx.closePath();
+
+        if (tone === 'light') {
+          const grad = ctx.createLinearGradient(0, -w, length, w);
+          grad.addColorStop(0, '#fffdf5');
+          grad.addColorStop(0.55, '#f6e3ba');
+          grad.addColorStop(1, '#c89d3c');
+          ctx.fillStyle = grad;
+        } else if (tone === 'mid') {
+          const grad = ctx.createLinearGradient(0, -w, length, w);
+          grad.addColorStop(0, '#b59448');
+          grad.addColorStop(0.6, '#6e5b31');
+          grad.addColorStop(1, '#3a301c');
+          ctx.fillStyle = grad;
+        } else {
+          ctx.fillStyle = '#232018';
+        }
+        ctx.globalAlpha = 0.94;
+        ctx.fill();
+
+        // Fine Gold Pencil Outline & Midrib Vein
+        ctx.strokeStyle = tone === 'light' ? '#7a5916' : '#d4af37';
+        ctx.lineWidth = 1.15;
+        ctx.globalAlpha = 0.85;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(2, 0);
+        ctx.quadraticCurveTo(length * 0.5, -1.5, length * 0.92, 0);
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        for (let v = 0.25; v <= 0.75; v += 0.22) {
+          const vx = length * v;
+          ctx.beginPath();
+          ctx.moveTo(vx, 0);
+          ctx.lineTo(vx + length * 0.14, -w * 0.48);
+          ctx.moveTo(vx, 0);
+          ctx.lineTo(vx + length * 0.14, w * 0.48);
+          ctx.lineWidth = 0.55;
+          ctx.globalAlpha = 0.5;
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // Helper: Realistic Golden-Ivory Blossom Cluster with Petals
+      function drawFloralCluster(cx, cy, radius) {
+        ctx.save();
+        const shadowGrad = ctx.createRadialGradient(cx, cy + 4, radius * 0.2, cx, cy, radius * 1.35);
+        shadowGrad.addColorStop(0, 'rgba(5, 8, 17, 0.75)');
+        shadowGrad.addColorStop(1, 'rgba(5, 8, 17, 0)');
+        ctx.fillStyle = shadowGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy + 4, radius * 1.35, 0, Math.PI * 2);
+        ctx.fill();
+
+        const floretCount = Math.floor(radius * 1.15);
+        for (let i = 0; i < floretCount; i++) {
+          const ang = rand() * Math.PI * 2;
+          const dist = Math.sqrt(rand()) * radius * 0.88;
+          const fx = cx + Math.cos(ang) * dist;
+          const fy = cy + Math.sin(ang) * dist;
+          const pr = 4 + rand() * 5.5;
+
+          for (let pet = 0; pet < 4; pet++) {
+            const pAng = (pet * Math.PI) / 2 + rand() * 0.4;
+            const px = fx + Math.cos(pAng) * (pr * 0.55);
+            const py = fy + Math.sin(pAng) * (pr * 0.55);
+            ctx.beginPath();
+            ctx.arc(px, py, pr * 0.62, 0, Math.PI * 2);
+            ctx.fillStyle = dist < radius * 0.45 ? '#fffdf7' : '#f3dca6';
+            ctx.globalAlpha = 0.92;
+            ctx.fill();
+            ctx.strokeStyle = '#8b691e';
+            ctx.lineWidth = 0.65;
+            ctx.globalAlpha = 0.55;
+            ctx.stroke();
+          }
+          ctx.beginPath();
+          ctx.arc(fx, fy, 1.2, 0, Math.PI * 2);
+          ctx.fillStyle = '#b48625';
+          ctx.globalAlpha = 0.85;
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      // ==========================================================
+      // STEP 1: DEEP ROYAL NIGHT SKY & GOLDEN CHARCOAL HATCHING
+      // ==========================================================
+      ctx.clearRect(0, 0, W, H);
+      const nightPaperGrad = ctx.createRadialGradient(W * 0.5, H * 0.42, 60, W * 0.5, H * 0.5, W * 0.78);
+      nightPaperGrad.addColorStop(0, '#131d33');
+      nightPaperGrad.addColorStop(0.6, '#0a101e');
+      nightPaperGrad.addColorStop(1, '#050811');
+      ctx.fillStyle = nightPaperGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Deep Starry Night Sky Above the Facade
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(25, 22);
+      ctx.lineTo(W - 25, 22);
+      ctx.lineTo(W - 25, 452);
+      ctx.lineTo(758, 464);
+      ctx.lineTo(758, 372);
+      ctx.lineTo(342, 372);
+      ctx.lineTo(342, 464);
+      ctx.lineTo(25, 476);
+      ctx.closePath();
+
+      const skyGrad = ctx.createLinearGradient(0, 20, 0, 465);
+      skyGrad.addColorStop(0, '#04070f');
+      skyGrad.addColorStop(0.6, '#080e1c');
+      skyGrad.addColorStop(1, '#121c31');
+      ctx.fillStyle = skyGrad;
+      ctx.fill();
+      ctx.restore();
+
+      // Subtle Golden-Charcoal Cross-Hatching in the Night Sky
+      pencilHatchRect(25, 22, W - 50, 445, 7, 34, 0.12, '#d4af37');
+      pencilHatchRect(25, 22, W - 50, 445, 8, -42, 0.10, '#94762c');
+
+      // ==========================================================
+      // STEP 2: NEOCLASSICAL FACADE OF "GRAND STAR 2" IN NIGHT GOLD
+      // ==========================================================
+      ctx.save();
+      const wallGrad = ctx.createLinearGradient(0, 450, 0, 940);
+      wallGrad.addColorStop(0, '#2a2623');
+      wallGrad.addColorStop(0.35, '#1d1c21');
+      wallGrad.addColorStop(1, '#11131c');
+      ctx.fillStyle = wallGrad;
+      ctx.fillRect(25, 464, 318, 476);
+      ctx.fillRect(757, 450, 318, 490);
+
+      // Central Tower Pediment Body
+      const towerGrad = ctx.createLinearGradient(0, 372, 0, 940);
+      towerGrad.addColorStop(0, '#332d26');
+      towerGrad.addColorStop(0.5, '#222024');
+      towerGrad.addColorStop(1, '#13151f');
+      ctx.fillStyle = towerGrad;
+      ctx.fillRect(334, 372, 432, 568);
+      ctx.restore();
+
+      // Architectural Gold Pencil Hatching on Facade Walls
+      pencilHatchRect(25, 464, 318, 476, 6, 28, 0.18, '#d4af37');
+      pencilHatchRect(757, 450, 318, 490, 6, 28, 0.18, '#d4af37');
+      pencilHatchRect(334, 372, 432, 568, 5, -25, 0.22, '#e6c567');
+
+      // Warm Golden Architectural Up-Lights Along Roofline & Cornice
+      const spotlightPositions = [
+        [110, 472, 85], [270, 465, 80], [405, 448, 95], [695, 448, 95], [845, 458, 85], [995, 455, 85],
+        [205, 555, 75], [965, 540, 75]
+      ];
+      spotlightPositions.forEach(([lx, ly, lr]) => {
+        const glow = ctx.createRadialGradient(lx, ly, 4, lx, ly, lr);
+        glow.addColorStop(0, 'rgba(255, 248, 210, 0.92)');
+        glow.addColorStop(0.4, 'rgba(234, 189, 78, 0.42)');
+        glow.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        ctx.fillStyle = glow;
+        ctx.beginPath();
+        ctx.arc(lx, ly, lr, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Central Stepped Entablature / Fluted Cornice Below "GRAND STAR 2"
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(306, 366);
+      ctx.lineTo(794, 366);
+      ctx.lineTo(768, 444);
+      ctx.lineTo(332, 444);
+      ctx.closePath();
+      const corniceGrad = ctx.createLinearGradient(0, 366, 0, 444);
+      corniceGrad.addColorStop(0, '#fff7db');
+      corniceGrad.addColorStop(0.22, '#635336');
+      corniceGrad.addColorStop(0.6, '#3e3528');
+      corniceGrad.addColorStop(1, '#231e19');
+      ctx.fillStyle = corniceGrad;
+      ctx.fill();
+      ctx.restore();
+
+      // Dense Vertical Golden Fluting Grooves Across the Entablature Cornice
+      for (let fx = 338; fx <= 762; fx += 8.5) {
+        pencilLine(fx, 384, fx, 441, 1.3, 0.72, '#d4af37', 2);
+        pencilLine(fx + 2.5, 384, fx + 2.5, 441, 0.8, 0.45, '#110e0b', 1);
+      }
+
+      // Crisp Top LED-Lit Golden Cornice Lip & Moulding Lines
+      pencilLine(302, 365, 798, 365, 4.0, 0.98, '#fffbeb', 2);
+      pencilLine(304, 369, 796, 369, 2.4, 0.9, '#eab308', 2);
+      pencilLine(314, 382, 786, 382, 1.6, 0.78, '#d4af37', 2);
+      pencilLine(330, 444, 770, 444, 2.6, 0.9, '#facc15', 2);
+
+      // Left & Right Wing Perspective Roof Cornices
+      pencilLine(20, 474, 340, 460, 3.6, 0.96, '#fffbeb', 2);
+      pencilLine(20, 478, 340, 464, 2.2, 0.85, '#eab308', 2);
+      pencilLine(20, 494, 338, 482, 1.5, 0.7, '#d4af37', 2);
+
+      pencilLine(760, 460, W - 20, 446, 3.6, 0.96, '#fffbeb', 2);
+      pencilLine(760, 464, W - 20, 450, 2.2, 0.85, '#eab308', 2);
+      pencilLine(762, 480, W - 20, 468, 1.5, 0.7, '#d4af37', 2);
+
+      // ==========================================================
+      // STEP 3: 3D ILLUMINATED ROOFTOP SIGN "GRAND STAR 2"
+      // ==========================================================
+      ctx.save();
+      ctx.font = "700 68px 'Playfair Display', 'Cormorant Garamond', Georgia, serif";
+      ctx.textAlign = 'center';
+
+      // Radiant Golden Halo Glow Around the Illuminated Letters
+      ctx.shadowColor = 'rgba(253, 224, 71, 0.95)';
+      ctx.shadowBlur = 26;
+      ctx.fillStyle = '#fffdf7';
+      ctx.fillText('GRAND STAR 2', W * 0.5 - 4, 353);
+
+      // 3D Extruded Side Depth of Letters in Deep Bronze
+      ctx.shadowBlur = 0;
+      for (let d = 5; d >= 1; d--) {
+        ctx.fillStyle = '#5c4314';
+        ctx.fillText('GRAND STAR 2', W * 0.5 - 4 + d * 1.1, 353 + d * 0.8);
+      }
+
+      // Crisp Glowing Ivory-Gold Face of "GRAND STAR 2"
+      ctx.fillStyle = '#fffef7';
+      ctx.fillText('GRAND STAR 2', W * 0.5 - 4, 353);
+      ctx.strokeStyle = '#eab308';
+      ctx.lineWidth = 1.4;
+      ctx.strokeText('GRAND STAR 2', W * 0.5 - 4, 353);
+      ctx.restore();
+
+      // ==========================================================
+      // STEP 4: CLASSICAL FLUTED CORINTHIAN COLUMNS & WALL MOULDINGS
+      // ==========================================================
+      function drawCorinthianColumn(cx, topY, bottomY, colW) {
+        const leftX = cx - colW / 2;
+        ctx.save();
+        const cylGrad = ctx.createLinearGradient(leftX, 0, leftX + colW, 0);
+        cylGrad.addColorStop(0, '#1e1a16');
+        cylGrad.addColorStop(0.32, '#8b7344');
+        cylGrad.addColorStop(0.55, '#d1b571');
+        cylGrad.addColorStop(1, '#191613');
+        ctx.fillStyle = cylGrad;
+        ctx.fillRect(leftX, topY + 34, colW, bottomY - (topY + 34));
+
+        const flutes = 5;
+        for (let f = 0; f <= flutes; f++) {
+          const fx = leftX + (colW / flutes) * f;
+          pencilLine(fx, topY + 34, fx, bottomY, f === 0 || f === flutes ? 1.8 : 1.0, 0.8, '#f6e09e', 2);
+        }
+
+        // Ornate Corinthian Capital
+        ctx.beginPath();
+        ctx.moveTo(leftX - 10, topY);
+        ctx.lineTo(leftX + colW + 10, topY);
+        ctx.lineTo(leftX + colW, topY + 34);
+        ctx.lineTo(leftX, topY + 34);
+        ctx.closePath();
+        ctx.fillStyle = '#5e4c2c';
+        ctx.fill();
+        pencilLine(leftX - 10, topY, leftX + colW + 10, topY, 2.2, 0.9, '#fde047', 2);
+        pencilLine(leftX, topY + 34, leftX + colW, topY + 34, 1.8, 0.85, '#eab308', 2);
+
+        for (let s = 0; s < 3; s++) {
+          const sx = leftX + 6 + s * (colW / 3);
+          ctx.beginPath();
+          ctx.arc(sx + 4, topY + 14, 6, 0, Math.PI * 1.6);
+          ctx.strokeStyle = '#fef08a';
+          ctx.lineWidth = 1.3;
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      drawCorinthianColumn(68, 495, 935, 44);
+      drawCorinthianColumn(302, 484, 935, 42);
+      drawCorinthianColumn(862, 474, 935, 46);
+      drawCorinthianColumn(1045, 468, 935, 42);
+
+      // Arched Neoclassical Wall Moulding Frames on Left & Right Wings
+      function drawWingArchPanel(cx, topY, w, bottomY) {
+        ctx.save();
+        ctx.strokeStyle = '#d4af37';
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.moveTo(cx - w / 2, bottomY);
+        ctx.lineTo(cx - w / 2, topY + w / 2);
+        ctx.arc(cx, topY + w / 2, w / 2, Math.PI, 0, false);
+        ctx.lineTo(cx + w / 2, bottomY);
+        ctx.stroke();
+
+        ctx.strokeStyle = 'rgba(254, 240, 138, 0.55)';
+        ctx.lineWidth = 1.1;
+        ctx.beginPath();
+        ctx.moveTo(cx - w / 2 + 8, bottomY);
+        ctx.lineTo(cx - w / 2 + 8, topY + w / 2);
+        ctx.arc(cx, topY + w / 2, w / 2 - 8, Math.PI, 0, false);
+        ctx.lineTo(cx + w / 2 - 8, bottomY);
+        ctx.stroke();
+        ctx.restore();
+      }
+      drawWingArchPanel(188, 560, 128, 920);
+      drawWingArchPanel(955, 548, 128, 920);
+
+      // ==========================================================
+      // STEP 5: CENTRAL GRAND ARCHWAY, SPANDREL RELIEFS & ENTRANCE DOORS
+      // ==========================================================
+      const archCX = W * 0.5;
+      const archCY = 635;
+      const archR = 176;
+
+      function drawSpandrelRelief(sign) {
+        ctx.save();
+        const cornerX = archCX + sign * 184;
+        const cornerY = 460;
+        ctx.fillStyle = '#473922';
+        ctx.strokeStyle = '#facc15';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(cornerX, cornerY);
+        ctx.lineTo(cornerX - sign * 74, cornerY);
+        ctx.quadraticCurveTo(cornerX - sign * 32, cornerY + 32, cornerX, cornerY + 78);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        for (let r = 8; r <= 24; r += 8) {
+          ctx.beginPath();
+          ctx.arc(cornerX - sign * 24, cornerY + 24, r, 0, Math.PI * 1.4);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+      drawSpandrelRelief(-1);
+      drawSpandrelRelief(1);
+
+      // Coffered Recessed Archway Interior (Illuminated Warm Gold)
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(archCX - archR, 945);
+      ctx.lineTo(archCX - archR, archCY);
+      ctx.arc(archCX, archCY, archR, Math.PI, 0, false);
+      ctx.lineTo(archCX + archR, 945);
+      ctx.closePath();
+
+      const archIntGrad = ctx.createRadialGradient(archCX, archCY - 45, 25, archCX, archCY + 40, archR * 1.3);
+      archIntGrad.addColorStop(0, '#fff9e6');
+      archIntGrad.addColorStop(0.5, '#8c6f39');
+      archIntGrad.addColorStop(1, '#262017');
+      ctx.fillStyle = archIntGrad;
+      ctx.fill();
+      ctx.clip();
+
+      // Recessed Arch Ceiling Spotlights
+      for (let a = Math.PI * 1.12; a <= Math.PI * 1.88; a += 0.25) {
+        const lx = archCX + Math.cos(a) * (archR - 26);
+        const ly = archCY + Math.sin(a) * (archR - 26);
+        const lGlow = ctx.createRadialGradient(lx, ly, 2, lx, ly, 28);
+        lGlow.addColorStop(0, '#ffffff');
+        lGlow.addColorStop(0.5, 'rgba(253, 224, 71, 0.75)');
+        lGlow.addColorStop(1, 'rgba(253, 224, 71, 0)');
+        ctx.fillStyle = lGlow;
+        ctx.beginPath();
+        ctx.arc(lx, ly, 28, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(lx, ly, 4.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#fffdf9';
+        ctx.fill();
+        ctx.strokeStyle = '#ca8a04';
+        ctx.lineWidth = 1.1;
+        ctx.stroke();
+      }
+
+      // Grand Double Entrance Doors Inside the Archway
+      const doorW = 205;
+      const doorLeft = archCX - doorW / 2;
+      const doorTop = 710;
+      ctx.fillStyle = '#0c0a09';
+      ctx.fillRect(doorLeft, doorTop, doorW, 240);
+      pencilHatchRect(doorLeft, doorTop, doorW, 240, 4, 45, 0.35, '#b48625');
+      pencilLine(archCX, doorTop, archCX, 945, 2.5, 0.9, '#eab308', 2);
+
+      // Circular Decorative Medallion Above the Entrance Doors
+      const medY = 665;
+      ctx.beginPath();
+      ctx.arc(archCX, medY, 33, 0, Math.PI * 2);
+      ctx.fillStyle = '#14110e';
+      ctx.fill();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#facc15';
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(archCX, medY, 24, 0, Math.PI * 2);
+      ctx.strokeStyle = '#fef08a';
+      ctx.lineWidth = 1.8;
+      ctx.setLineDash([4, 3]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.beginPath();
+      ctx.arc(archCX, medY, 10, 0, Math.PI * 2);
+      ctx.fillStyle = '#fef08a';
+      ctx.fill();
+      ctx.restore();
+
+      // Golden Archway Moulding Rings
+      ctx.save();
+      [0, 14, 28].forEach((offset, idx) => {
+        ctx.beginPath();
+        ctx.moveTo(archCX - (archR - offset), 945);
+        ctx.lineTo(archCX - (archR - offset), archCY);
+        ctx.arc(archCX, archCY, archR - offset, Math.PI, 0, false);
+        ctx.lineTo(archCX + (archR - offset), 945);
+        ctx.strokeStyle = idx === 0 ? '#fde047' : '#d4af37';
+        ctx.lineWidth = idx === 0 ? 3.6 : 1.7;
+        ctx.stroke();
+      });
+      ctx.restore();
+
+      // ==========================================================
+      // STEP 6: THREE CASCADING LAYERS OF ILLUMINATED FLORAL WEDDING ARCHES
+      // ==========================================================
+      function drawFloralArchLayer(archPoints, thickness, leafCount, flowerClusters, fairyLightCount) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(archPoints[0].x, archPoints[0].y);
+        for (let i = 1; i < archPoints.length; i++) {
+          ctx.lineTo(archPoints[i].x, archPoints[i].y);
+        }
+        ctx.strokeStyle = 'rgba(10, 14, 24, 0.7)';
+        ctx.lineWidth = thickness * 1.15;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.stroke();
+
+        ctx.strokeStyle = '#fef9c3';
+        ctx.lineWidth = 5;
+        ctx.shadowColor = '#facc15';
+        ctx.shadowBlur = 16;
+        ctx.stroke();
+        ctx.restore();
+
+        for (let i = 0; i < leafCount; i++) {
+          const t = i / leafCount;
+          const segIdx = Math.min(archPoints.length - 2, Math.floor(t * (archPoints.length - 1)));
+          const segT = (t * (archPoints.length - 1)) - segIdx;
+          const px = archPoints[segIdx].x + (archPoints[segIdx + 1].x - archPoints[segIdx].x) * segT;
+          const py = archPoints[segIdx].y + (archPoints[segIdx + 1].y - archPoints[segIdx].y) * segT;
+
+          const spreadX = (rand() - 0.5) * thickness * 1.5;
+          const spreadY = (rand() - 0.35) * thickness * 1.4;
+          const leafLen = 18 + rand() * 26;
+          const leafAng = (rand() - 0.5) * Math.PI * 1.6 + Math.PI * 0.5;
+          const tones = ['dark', 'mid', 'light', 'mid'];
+          drawRealisticLeaf(px + spreadX, py + spreadY, leafLen, leafAng, tones[i % 4]);
+        }
+
+        flowerClusters.forEach(([fx, fy, fr]) => {
+          drawFloralCluster(fx, fy, fr);
+        });
+
+        ctx.save();
+        for (let i = 0; i < fairyLightCount; i++) {
+          const t = rand();
+          const segIdx = Math.min(archPoints.length - 2, Math.floor(t * (archPoints.length - 1)));
+          const segT = (t * (archPoints.length - 1)) - segIdx;
+          const lx = archPoints[segIdx].x + (archPoints[segIdx + 1].x - archPoints[segIdx].x) * segT + (rand() - 0.5) * thickness * 0.7;
+          const ly = archPoints[segIdx].y + (archPoints[segIdx + 1].y - archPoints[segIdx].y) * segT + (rand() - 0.5) * thickness * 0.7;
+
+          const glow = ctx.createRadialGradient(lx, ly, 1, lx, ly, 12);
+          glow.addColorStop(0, '#ffffff');
+          glow.addColorStop(0.45, 'rgba(254, 240, 138, 0.85)');
+          glow.addColorStop(1, 'rgba(250, 204, 21, 0)');
+          ctx.fillStyle = glow;
+          ctx.beginPath();
+          ctx.arc(lx, ly, 12, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      const innerArchPts = [
+        { x: 385, y: 955 }, { x: 405, y: 845 }, { x: 550, y: 838 }, { x: 695, y: 845 }, { x: 715, y: 955 }
+      ];
+      drawFloralArchLayer(innerArchPts, 34, 95, [
+        [415, 855, 24], [550, 840, 28], [685, 855, 24]
+      ], 28);
+
+      const midArchPts = [
+        { x: 235, y: 955 }, { x: 295, y: 820 }, { x: 345, y: 745 },
+        { x: 550, y: 738 }, { x: 755, y: 745 }, { x: 805, y: 820 }, { x: 865, y: 955 }
+      ];
+      drawFloralArchLayer(midArchPts, 52, 180, [
+        [275, 865, 32], [355, 750, 38], [465, 742, 34], [565, 745, 40],
+        [665, 742, 34], [755, 752, 38], [825, 865, 32]
+      ], 52);
+
+      const frontArchPts = [
+        { x: 42, y: 850 }, { x: 135, y: 705 }, { x: 245, y: 590 },
+        { x: 385, y: 556 }, { x: 550, y: 545 }, { x: 725, y: 556 },
+        { x: 865, y: 592 }, { x: 975, y: 715 }, { x: 1058, y: 860 }
+      ];
+      drawFloralArchLayer(frontArchPts, 78, 340, [
+        [95, 765, 36], [185, 645, 44], [255, 582, 52],
+        [375, 558, 48], [485, 552, 46], [605, 535, 62],
+        [725, 558, 48], [855, 588, 50], [955, 658, 46], [1015, 780, 38]
+      ], 82);
+
+      // ==========================================================
+      // STEP 7: OVERHANGING GOLDEN-ILLUMINATED TREE LEAVES AT THE TOP SKY
+      // ==========================================================
+      const topBranches = [
+        [[18, 55], [95, 98], [182, 148]],
+        [[285, 18], [335, 95], [385, 175]],
+        [[465, 15], [495, 120], [525, 255]],
+        [[590, 15], [560, 130], [538, 285]],
+        [[725, 15], [705, 85], [685, 150]],
+        [[885, 15], [935, 68], [1025, 108]]
+      ];
+      topBranches.forEach(pts => {
+        pencilLine(pts[0][0], pts[0][1], pts[1][0], pts[1][1], 2.6, 0.85, '#f6e09e', 2);
+        pencilLine(pts[1][0], pts[1][1], pts[2][0], pts[2][1], 1.8, 0.8, '#d4af37', 2);
+      });
+
+      const leftTwigLeaves = [
+        [28, 65, 42, 0.45, 'light'], [58, 82, 46, 0.65, 'light'], [92, 102, 44, 0.35, 'light'],
+        [124, 122, 40, 0.55, 'light'], [156, 138, 36, 0.4, 'light']
+      ];
+      leftTwigLeaves.forEach(([lx, ly, len, ang, tone]) => drawRealisticLeaf(lx, ly, len, ang, tone));
+
+      for (let i = 0; i < 115; i++) {
+        const clusterChoice = i % 3;
+        let lx, ly, tone;
+        if (clusterChoice === 0) {
+          lx = 240 + rand() * 240;
+          ly = 18 + rand() * 155;
+          tone = rand() > 0.22 ? 'light' : 'mid';
+        } else if (clusterChoice === 1) {
+          lx = 435 + rand() * 195;
+          ly = 35 + rand() * 245;
+          tone = ly > 140 ? (rand() > 0.3 ? 'mid' : 'dark') : 'light';
+        } else {
+          lx = 640 + rand() * 390;
+          ly = 16 + rand() * 115;
+          tone = rand() > 0.2 ? 'light' : 'mid';
+        }
+        const len = 32 + rand() * 26;
+        const ang = Math.PI * 0.25 + (rand() - 0.5) * Math.PI * 0.85;
+        drawRealisticLeaf(lx, ly, len, ang, tone);
+      }
+
+      // ==========================================================
+      // STEP 8: GOLDEN BORDER & CALLIGRAPHIC CAPTION
+      // ==========================================================
+      ctx.save();
+      ctx.strokeStyle = 'rgba(212, 175, 55, 0.65)';
+      ctx.lineWidth = 1.8;
+      ctx.strokeRect(22, 20, W - 44, H - 72);
+
+      ctx.fillStyle = '#fde68a';
+      ctx.font = "bold 24px 'Amiri', serif";
+      ctx.textAlign = 'center';
+      ctx.fillText('قاعة جراند ستار 2 (Grand Star 2) — طريق منقباد، بني غالب، أسيوط • حفل زفاف أدهم و أمل', W * 0.5, H - 22);
+      ctx.restore();
+    }
+
+    // =====================================================================
+    // 7. COPY ADDRESS TO CLIPBOARD (WITHOUT POSTAL CODE)
+    // =====================================================================
+    function copyVenueAddress() {
+      const addressText = 'قاعة جراند ستار 2 (Grand Star 2) — طريق منقباد، 52PV+MP, Bani Ghaleb, Asyut, Assiut Governorate';
+      const tempInput = document.createElement('textarea');
+      tempInput.value = addressText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        showToast('تم نسخ العنوان: طريق منقباد — قاعة جراند ستار 2 (52PV+MP)');
+      } catch (err) {
+        showToast('العنوان: 52PV+MP, Bani Ghaleb, Asyut');
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // =====================================================================
+    // 8. GUEST WISHES WALL (ARABIC)
+    // =====================================================================
+    function submitGuestWish(e) {
+      e.preventDefault();
+      const nameInput = document.getElementById('guestNameInput');
+      const statusInput = document.getElementById('guestStatusInput');
+      const messageInput = document.getElementById('guestMessageInput');
+      const wall = document.getElementById('wishesWall');
+
+      const name = nameInput.value.trim();
+      const status = statusInput.value;
+      const msg = messageInput.value.trim();
+      if (!name || !msg) return;
+
+      const card = document.createElement('div');
+      card.className = 'p-4 rounded-2xl bg-amber-500/15 border border-amber-400/45 transition-all duration-500';
+
+      const header = document.createElement('div');
+      header.className = 'flex items-center justify-between text-xs font-ui-ar text-amber-300';
+
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'font-bold';
+      nameSpan.textContent = name;
+
+      const statusSpan = document.createElement('span');
+      statusSpan.textContent = status;
+
+      header.appendChild(nameSpan);
+      header.appendChild(statusSpan);
+
+      const bodyP = document.createElement('p');
+      bodyP.className = 'font-arabic text-amber-100 text-lg mt-1.5';
+      bodyP.textContent = `«${msg}»`;
+
+      card.appendChild(header);
+      card.appendChild(bodyP);
+      wall.prepend(card);
+
+      nameInput.value = '';
+      messageInput.value = '';
+      showToast(`شكراً لك يا ${name}! تم إضافة تهنئتك للعروسين أدهم و أمل.`);
+    }
+
+    // =====================================================================
+    // 9. TOAST NOTIFICATION HELPER
+    // =====================================================================
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastMessageText');
+      text.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    // =====================================================================
+    // 10. FLOATING CELESTIAL GOLDEN PARTICLES
+    // =====================================================================
+    function initCelestialParticles() {
+      const canvas = document.getElementById('celestialCanvas');
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const particles = Array.from({ length: 48 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 2 + 0.6,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: -Math.random() * 0.4 - 0.12,
+        alpha: Math.random() * 0.6 + 0.2
+      }));
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, width, height);
+        for (const p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.y < -10) p.y = height + 10;
+          if (p.x < -10) p.x = width + 10;
+          if (p.x > width + 10) p.x = -10;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(248, 218, 130, ${p.alpha})`;
+          ctx.fill();
+        }
+        requestAnimationFrame(animateParticles);
+      }
+
+      animateParticles();
+    }
+
+    window.onload = function() {
+      updateCountdownDisplay();
+      setInterval(updateCountdownDisplay, 1000);
+      initRingPhotoShuffle();
+      renderPhotorealisticGrandStarSketch();
+      initCelestialParticles();
+    };
+  </script>
+</body>
+</html>
